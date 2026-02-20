@@ -1,7 +1,12 @@
 import React from 'react';
 import Button from './ui/Button';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 const DownloadSection = () => {
+    const { language } = useLanguage();
+    const t = translations[language].download;
+
     return (
         <section className="py-20 relative overflow-hidden">
             {/* Background gradients */}
@@ -10,27 +15,26 @@ const DownloadSection = () => {
             <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                 <div className="md:w-1/2 space-y-6">
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-                        Play Anywhere, <br />
-                        <span className="text-bhambola-red">Anytime.</span>
+                        {t.title_part1} <br />
+                        <span className="text-bhambola-red">{t.title_part2}</span>
                     </h2>
                     <p className="text-gray-600 text-lg max-w-md">
-                        The full BHAMBOLA experience is exclusive to our mobile app.
-                        Download now to join your community and start winning.
+                        {t.desc}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                         <button className="flex items-center gap-3 bg-gray-900 border border-white/20 hover:border-bhambola-gold/50 px-6 py-3 rounded-xl transition-all hover:scale-105">
                             <span className="text-2xl"></span>
                             <div className="text-left">
-                                <div className="text-xs text-gray-400">Download on the</div>
-                                <div className="text-sm font-bold">App Store</div>
+                                <div className="text-xs text-gray-400">{t.apple_subtitle}</div>
+                                <div className="text-sm font-bold">{t.apple_title}</div>
                             </div>
                         </button>
                         <button className="flex items-center gap-3 bg-gray-900 border border-white/20 hover:border-bhambola-gold/50 px-6 py-3 rounded-xl transition-all hover:scale-105">
                             <span className="text-2xl">▶</span>
                             <div className="text-left">
-                                <div className="text-xs text-gray-400">GET IT ON</div>
-                                <div className="text-sm font-bold">Google Play</div>
+                                <div className="text-xs text-gray-400">{t.google_subtitle}</div>
+                                <div className="text-sm font-bold">{t.google_title}</div>
                             </div>
                         </button>
                     </div>
@@ -45,7 +49,7 @@ const DownloadSection = () => {
                                 <div className="w-16 h-16 bg-bhambola-red rounded-full mx-auto mb-4 flex items-center justify-center border-2 border-bhambola-gold">
                                     <span className="text-xl font-bold text-bhambola-gold">B</span>
                                 </div>
-                                <p className="text-gray-400 text-sm">App Interface Preview</p>
+                                <p className="text-gray-400 text-sm">{t.preview_text}</p>
                             </div>
                         </div>
                     </div>
