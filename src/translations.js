@@ -157,6 +157,18 @@ export const translations = {
             status_label_fairness: "Fairness Check",
             status_label_autoplays: "Active Autoplays",
             quote: "Ensuring fair play when you need to step away."
+        },
+        account: {
+            balance: "Chip Balance",
+            purchased: "Total Purchased",
+            daily_usage: "Daily Usage",
+            buy_chips: "Buy Chips",
+            join_game: "Join Game",
+            history: "Transaction History",
+            col_date: "Date",
+            col_type: "Type",
+            col_amount: "Amount",
+            col_status: "Status"
         }
     },
     HI: {
@@ -317,6 +329,18 @@ export const translations = {
             status_label_fairness: "निष्पक्षता जांच",
             status_label_autoplays: "सक्रिय ऑटोप्ले",
             quote: "जब आपको दूर जाने की आवश्यकता हो तो निष्पक्ष खेल सुनिश्चित करना।"
+        },
+        account: {
+            balance: "चिप शेष",
+            purchased: "कुल खरीदा गया",
+            daily_usage: "दैनिक उपयोग",
+            buy_chips: "चिप्स खरीदें",
+            join_game: "खेल में शामिल हों",
+            history: "लेनदेन का इतिहास",
+            col_date: "तारीख",
+            col_type: "प्रकार",
+            col_amount: "राशि",
+            col_status: "स्थिति"
         }
     },
     TE: {
@@ -477,6 +501,18 @@ export const translations = {
             status_label_fairness: "న్యాయమైన తనిఖీ",
             status_label_autoplays: "యాక్టివ్ ఆటోప్లేలు",
             quote: "మీరు దూరంగా ఉండాల్సిన అవసరం వచ్చినప్పుడు న్యాయమైన ఆటను నిర్ధారిస్తుంది."
+        },
+        account: {
+            balance: "చిప్ బ్యాలెన్స్",
+            purchased: "మొత్తం కొనుగోలు చేసినవి",
+            daily_usage: "రోజువారీ వినియోగం",
+            buy_chips: "చిప్స్ కొనండి",
+            join_game: "ఆటలో చేరండి",
+            history: "లావాదేవీల చరిత్ర",
+            col_date: "తేదీ",
+            col_type: "రకం",
+            col_amount: "మొత్తం",
+            col_status: "స్థితి"
         }
     }
 };

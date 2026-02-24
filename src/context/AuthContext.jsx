@@ -8,7 +8,18 @@ export const AuthProvider = ({ children }) => {
     const login = (email, password) => {
         // Mock login - accept any non-empty values
         if (email && password) {
-            setUser({ email, name: email.split('@')[0] });
+            setUser({
+                email,
+                name: email.split('@')[0],
+                balance: 5000,
+                purchasedChips: 2500,
+                dailyUsage: 150,
+                transactions: [
+                    { id: 1, date: '2024-02-23', type: 'Purchase', amount: 2500, status: 'Completed' },
+                    { id: 2, date: '2024-02-24', type: 'Game Win', amount: 300, status: 'Completed' },
+                    { id: 3, date: '2024-02-24', type: 'Entry Fee', amount: -150, status: 'Completed' }
+                ]
+            });
             return true;
         }
         return false;
