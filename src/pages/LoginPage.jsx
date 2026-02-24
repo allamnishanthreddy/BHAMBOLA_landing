@@ -18,7 +18,7 @@ const LoginPage = () => {
         e.preventDefault();
         setError('');
         if (login(email, password)) {
-            navigate('/');
+            navigate('/intro');
         } else {
             setError(t.failed_login);
         }

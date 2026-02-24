@@ -11,6 +11,8 @@ import DownloadSection from './components/DownloadSection';
 import WhatsAppButton from './components/WhatsAppButton';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import RatingsSection from './components/RatingsSection';
+import VideoTransition from './components/VideoTransition';
 
 function LandingPage() {
   return (
@@ -18,10 +20,10 @@ function LandingPage() {
       <Header />
       <main>
         <Hero />
-        <Merchandise />
         <Community />
-        <Wallet />
-        <DownloadSection />
+        <DownloadSection /> {/* Play Anytime */}
+        <Merchandise />
+        <RatingsSection />
       </main>
       <Footer />
       <WhatsAppButton />
@@ -38,6 +40,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
+            <Route path="/intro" element={<VideoTransition />} />
           </Routes>
         </Router>
       </LanguageProvider>

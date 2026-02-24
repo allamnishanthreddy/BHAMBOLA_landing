@@ -4,9 +4,10 @@ export const translations = {
             home: "Home",
             merchandise: "Merchandise",
             rules: "Rules",
-            chips: "Chips",
+            chips: "Payment",
             events: "Events",
-            login: "Login"
+            login: "Login",
+            signup: "Sign Up"
         },
         hero: {
             tagline_part1: "Where",
@@ -139,9 +140,10 @@ export const translations = {
             home: "होम",
             merchandise: "सामान",
             rules: "नियम",
-            chips: "चिप्स",
+            chips: "भुगतान",
             events: "इवेंट्स",
-            login: "लॉगिन"
+            login: "लॉगिन",
+            signup: "साइन अप करें"
         },
         hero: {
             tagline_part1: "जहाँ",
@@ -274,9 +276,10 @@ export const translations = {
             home: "హోమ్",
             merchandise: "వస్తువులు",
             rules: "నియమాలు",
-            chips: "చిప్స్",
+            chips: "చెల్లింపు",
             events: "ఈవెంట్లు",
-            login: "లాగిన్"
+            login: "లాగిన్",
+            signup: "సైన్ అప్ చేయండి"
         },
         hero: {
             tagline_part1: "ఎక్కడ",

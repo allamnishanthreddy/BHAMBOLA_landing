@@ -43,11 +43,7 @@ const Hero = () => {
                         </button>
                     </div>
 
-                    <div className="pt-6">
-                        <Button variant="secondary" className="px-12 py-4 text-xl font-bold shadow-2xl hover:shadow-yellow-500/50 transform hover:-translate-y-1">
-                            {t.cta}
-                        </Button>
-                    </div>
+
 
                     <div className="pt-4 flex items-center gap-6">
                         {/* Trust/Awards hint */}
@@ -74,18 +70,26 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    {/* Floating Casino Chips - Enhanced 3D Effect for Full Page */}
-                    <div className="absolute top-10 right-10 w-28 h-28 rounded-full bg-gradient-to-b from-blue-600 to-blue-800 border-4 border-dashed border-white shadow-2xl animate-float flex items-center justify-center transform rotate-12 z-20">
+                    {/* Flower-falling Casino Chips - Replacing static chips */}
+                    {/* Chip 1 */}
+                    <div className="absolute top-0 right-10 w-32 h-32 rounded-full bg-gradient-to-b from-bhambola-red to-red-900 border-[6px] border-dashed border-bhambola-gold shadow-2xl animate-flower-fall flex items-center justify-center transform hover:scale-105 transition-transform z-20">
                         <div className="text-center">
-                            <div className="text-xs text-white/50">CHIP</div>
-                            <div className="text-2xl font-bold text-white">50</div>
+                            <div className="text-xs text-bhambola-gold/80 font-bold uppercase tracking-widest">Chip</div>
+                            <div className="text-3xl font-bold text-white drop-shadow-md">50</div>
                         </div>
                     </div>
-
-                    <div className="absolute bottom-20 left-0 w-32 h-32 rounded-full bg-gradient-to-b from-bhambola-dark to-black border-4 border-dashed border-bhambola-gold shadow-2xl animate-float flex items-center justify-center transform -rotate-12 z-20" style={{ animationDelay: '1.5s' }}>
+                    {/* Chip 2 */}
+                    <div className="absolute top-0 left-20 w-32 h-32 rounded-full bg-gradient-to-b from-bhambola-red to-red-900 border-[6px] border-dashed border-bhambola-gold shadow-2xl animate-flower-fall flex items-center justify-center transform hover:scale-105 transition-transform z-20" style={{ animationDelay: '2s', animationDuration: '9s' }}>
                         <div className="text-center">
-                            <div className="text-xs text-bhambola-gold/50">CHIP</div>
-                            <div className="text-3xl font-bold text-bhambola-gold">100</div>
+                            <div className="text-xs text-bhambola-gold/80 font-bold uppercase tracking-widest">Chip</div>
+                            <div className="text-3xl font-bold text-white drop-shadow-md">50</div>
+                        </div>
+                    </div>
+                    {/* Chip 3 */}
+                    <div className="absolute top-0 right-1/3 w-32 h-32 rounded-full bg-gradient-to-b from-bhambola-red to-red-900 border-[6px] border-dashed border-bhambola-gold shadow-2xl animate-flower-fall flex items-center justify-center transform hover:scale-105 transition-transform z-20" style={{ animationDelay: '5s', animationDuration: '10s' }}>
+                        <div className="text-center">
+                            <div className="text-xs text-bhambola-gold/80 font-bold uppercase tracking-widest">Chip</div>
+                            <div className="text-3xl font-bold text-white drop-shadow-md">50</div>
                         </div>
                     </div>
 

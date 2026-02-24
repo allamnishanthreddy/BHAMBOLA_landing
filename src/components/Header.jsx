@@ -36,7 +36,7 @@ const Header = () => {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-16">
-                    {Object.keys(t.nav).filter(key => key !== 'login').map((key) => (
+                    {Object.keys(t.nav).filter(key => key !== 'login' && key !== 'signup').map((key) => (
                         <a
                             key={key}
                             href={`#${key}`}
@@ -77,11 +77,18 @@ const Header = () => {
                             </button>
                         </div>
                     ) : (
-                        <Link to="/login">
-                            <Button variant="secondary" className="hidden sm:block px-6 py-2 text-sm font-bold shadow-lg">
-                                {t.nav.login}
-                            </Button>
-                        </Link>
+                        <div className="flex items-center gap-3">
+                            <Link to="/login">
+                                <button className="hidden sm:block px-6 py-2 text-sm font-bold text-white hover:text-bhambola-gold transition-colors border-2 border-transparent hover:border-bhambola-gold/30 rounded-lg">
+                                    {t.nav.login}
+                                </button>
+                            </Link>
+                            <Link to="/signup">
+                                <Button variant="secondary" className="hidden sm:block px-6 py-2 text-sm font-bold shadow-lg">
+                                    {t.nav.signup}
+                                </Button>
+                            </Link>
+                        </div>
                     )}
                 </div>
             </div>

@@ -24,7 +24,7 @@ const SignupPage = () => {
         }
 
         if (login(email, password)) {
-            navigate('/');
+            navigate('/intro');
         } else {
             setError(t.failed_signup);
         }
