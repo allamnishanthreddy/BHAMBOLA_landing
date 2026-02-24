@@ -25,6 +25,7 @@ function LandingPage() {
         <Hero />
         <Community />
         <AIBotSection />
+        <Wallet />
         <DownloadSection /> {/* Play Anytime */}
         <Merchandise />
         <RatingsSection />

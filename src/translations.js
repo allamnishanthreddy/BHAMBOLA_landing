@@ -169,6 +169,20 @@ export const translations = {
             col_type: "Type",
             col_amount: "Amount",
             col_status: "Status"
+        },
+        pricing: {
+            title_highlight: "Premium",
+            title_suffix: "Experience",
+            subtitle: "Elevate your Bhambola journey with the Chips Economy. Secure, transparent, and built for fun.",
+            cta_login: "Login to Explore Pricing",
+            rules_title: "Payment Principles",
+            rule1: "Strictly for Chips: Payments are used exclusively for purchasing in-game chips.",
+            rule2: "Fair Pricing: Minimum purchase of 50 chips (₹1 = 1 Chip).",
+            rule3: "Pure Entertainment: Money invested is for gameplay and entertainment only.",
+            rule4: "Universal Access: All payment methods accepted including Credit/Debit Cards.",
+            rule5: "Regulatory Compliance: We follow GOI Online Gaming Act (2025). No cash winnings.",
+            last_tx: "Last Transaction",
+            buy_more: "Increase Your Balance"
         }
     },
     HI: {
@@ -341,6 +355,20 @@ export const translations = {
             col_type: "प्रकार",
             col_amount: "राशि",
             col_status: "स्थिति"
+        },
+        pricing: {
+            title_highlight: "प्रीमियम",
+            title_suffix: "अनुभव",
+            subtitle: "चिप्स इकोनॉमी के साथ अपनी भंबोला यात्रा को आगे बढ़ाएं। सुरक्षित, पारदर्शी और मनोरंजन के लिए निर्मित।",
+            cta_login: "कीमतें देखने के लिए लॉगिन करें",
+            rules_title: "भुगतान सिद्धांत",
+            rule1: "केवल चिप्स के लिए: भुगतान का उपयोग विशेष रूप से इन-गेम चिप्स खरीदने के लिए किया जाता है।",
+            rule2: "उचित मूल्य निर्धारण: न्यूनतम 50 चिप्स की खरीद (₹1 = 1 चिप)।",
+            rule3: "शुद्ध मनोरंजन: निवेश किया गया पैसा केवल गेमप्ले और मनोरंजन के लिए है।",
+            rule4: "यूनिवर्सल एक्सेस: क्रेडिट/डेबिट कार्ड सहित सभी भुगतान विधियां स्वीकार की जाती हैं।",
+            rule5: "नियामक अनुपालन: हम भारत सरकार ऑनलाइन गेमिंग अधिनियम (2025) का पालन करते हैं। कोई नकद जीत नहीं।",
+            last_tx: "अंतिम लेनदेन",
+            buy_more: "अपना बैलेंस बढ़ाएं"
         }
     },
     TE: {
@@ -513,6 +541,20 @@ export const translations = {
             col_type: "రకం",
             col_amount: "మొత్తం",
             col_status: "స్థితి"
+        },
+        pricing: {
+            title_highlight: "ప్రీమియం",
+            title_suffix: "అనుభవం",
+            subtitle: "చిప్స్ ఎకానమీతో మీ భంబోలా ప్రయాణాన్ని మెరుగుపరచుకోండి. సురక్షితమైనది, పారదర్శకమైనది మరియు వినోదం కోసం నిర్మించబడింది.",
+            cta_login: "ధరలను చూడటానికి లాగిన్ చేయండి",
+            rules_title: "చెల్లింపు సూత్రాలు",
+            rule1: "చిప్స్ కోసం మాత్రమే: చెల్లింపులు కేవలం ఇన్-గేమ్ చిప్స్ కొనడానికి మాత్రమే ఉపయోగించబడతాయి.",
+            rule2: "సరసమైన ధర: కనీసం 50 చిప్స్ కొనుగోలు (₹1 = 1 చిప్).",
+            rule3: "కేవలం వినోదం: పెట్టుబడి పెట్టిన డబ్బు ఆట మరియు వినోదం కోసం మాత్రమే.",
+            rule4: "యూనివర్సల్ యాక్సెస్: క్రెడిట్/డెబిట్ కార్డులతో సహా అన్ని చెల్లింపు పద్ధతులు ఆమోదించబడతాయి.",
+            rule5: "నియంత్రణ సమ్మతి: మేము GOI ఆన్‌లైన్ గేమింగ్ చట్టం (2025) ని అనుసరిస్తాము. నగదు గెలుపులు లేవు.",
+            last_tx: "చివరి లావాదేవీ",
+            buy_more: "మీ బ్యాలెన్స్‌ను పెంచుకోండి"
         }
     }
 };
