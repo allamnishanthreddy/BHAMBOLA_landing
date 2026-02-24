@@ -49,7 +49,7 @@ const Header = () => {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-16">
-                    {Object.keys(t.nav).filter(key => key !== 'login' && key !== 'signup').map((key) => (
+                    {Object.keys(t.nav).filter(key => key !== 'login' && key !== 'signup' && key !== 'profile').map((key) => (
                         <a
                             key={key}
                             href={`#${key}`}
