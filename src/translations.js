@@ -133,6 +133,25 @@ export const translations = {
             failed_login: "Failed to login",
             failed_signup: "Failed to create account",
             passwords_mismatch: "Passwords do not match"
+        },
+        ai: {
+            title_prefix: "Never Miss a Turn with",
+            title_highlight: "AI-Bot",
+            subtitle: "Life happens. Whether it's a door bell or a quick call, our AI Bot steps in to play for you. It ensures the game doesn't stop and your friends aren't invalidly waiting.",
+            features: [
+                "Automatically activates when inactive",
+                "Limited to 3 turns per game to prevent abuse",
+                "Transparent actions visible to all players",
+                "Dedicated auto-play UI section"
+            ],
+            explain: "Explain How It Works",
+            status_title: "AI Guardian Status",
+            status_online: "ONLINE",
+            status_verified: "VERIFIED",
+            status_label_system: "System Status",
+            status_label_fairness: "Fairness Check",
+            status_label_autoplays: "Active Autoplays",
+            quote: "Ensuring fair play when you need to step away."
         }
     },
     HI: {
@@ -269,6 +288,25 @@ export const translations = {
             failed_login: "लॉगिन करने में विफल",
             failed_signup: "खाता बनाने में विफल",
             passwords_mismatch: "पासवर्ड मेल नहीं खाते"
+        },
+        ai: {
+            title_prefix: "कभी एक भी मोड़ न चूकें",
+            title_highlight: "AI-बॉट",
+            subtitle: "जीवन में कुछ भी हो सकता है। चाहे वह दरवाजे की घंटी हो या कोई त्वरित कॉल, हमारा AI बॉट आपकी जगह खेलने के लिए आता है। यह सुनिश्चित करता है कि खेल रुके नहीं और आपके दोस्त अवैध रूप से प्रतीक्षा न करें।",
+            features: [
+                "निष्क्रिय होने पर स्वचालित रूप से सक्रिय हो जाता है",
+                "दुरुपयोग रोकने के लिए प्रति खेल 3 मोड़ तक सीमित",
+                "पारदर्शी क्रियाएं सभी खिलाड़ियों को दिखाई देती हैं",
+                "समर्पित ऑटो-प्ले UI अनुभाग"
+            ],
+            explain: "बताएं कि यह कैसे काम करता है",
+            status_title: "AI गार्जियन स्टेटस",
+            status_online: "ऑनलाइन",
+            status_verified: "सत्यापित",
+            status_label_system: "सिस्टम स्टेटस",
+            status_label_fairness: "निष्पक्षता जांच",
+            status_label_autoplays: "सक्रिय ऑटोप्ले",
+            quote: "जब आपको दूर जाने की आवश्यकता हो तो निष्पक्ष खेल सुनिश्चित करना।"
         }
     },
     TE: {
@@ -405,6 +443,25 @@ export const translations = {
             failed_login: "లాగిన్ చేయడంలో విఫలమైంది",
             failed_signup: "ఖాతా సృష్టించడంలో విఫలమైంది",
             passwords_mismatch: "పాస్‌వర్డ్‌లు సరిపోలడం లేదు"
+        },
+        ai: {
+            title_prefix: "ఒక్క టర్న్ కూడా మిస్ కాకండి",
+            title_highlight: "AI-బాట్",
+            subtitle: "జీవితంలో ఏదైనా జరగవచ్చు. అది డోర్ బెల్ కావచ్చు లేదా క్విక్ కాల్ కావచ్చు, మా AI బాట్ మీ కోసం ఆడుతుంది. ఆట ఆగకుండా మరియు మీ స్నేహితులు వేచి ఉండకుండా ఇది చూస్తుంది.",
+            features: [
+                "నిష్క్రియంగా ఉన్నప్పుడు స్వయంచాలకంగా యాక్టివేట్ అవుతుంది",
+                "దుర్వినియోగాన్ని నిరోధించడానికి ఒక ఆటకి 3 టర్న్‌లకు మాత్రమే పరిమితం",
+                "పారదర్శక చర్యలు ఆటగాళ్లందరికీ కనిపిస్తాయి",
+                "ప్రత్యేకమైన ఆటో-ప్లే UI విభాగం"
+            ],
+            explain: "ఇది ఎలా పని చేస్తుందో వివరించండి",
+            status_title: "AI గార్డియన్ స్థితి",
+            status_online: "ఆన్‌లైన్",
+            status_verified: "ధృవీకరించబడింది",
+            status_label_system: "సిస్టమ్ స్థితి",
+            status_label_fairness: "న్యాయమైన తనిఖీ",
+            status_label_autoplays: "యాక్టివ్ ఆటోప్లేలు",
+            quote: "మీరు దూరంగా ఉండాల్సిన అవసరం వచ్చినప్పుడు న్యాయమైన ఆటను నిర్ధారిస్తుంది."
         }
     }
 };

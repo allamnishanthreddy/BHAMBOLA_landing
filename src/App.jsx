@@ -13,6 +13,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import RatingsSection from './components/RatingsSection';
 import VideoTransition from './components/VideoTransition';
+import AIBotSection from './components/AIBotSection';
 
 function LandingPage() {
   return (
@@ -21,6 +22,7 @@ function LandingPage() {
       <main>
         <Hero />
         <Community />
+        <AIBotSection />
         <DownloadSection /> {/* Play Anytime */}
         <Merchandise />
         <RatingsSection />
