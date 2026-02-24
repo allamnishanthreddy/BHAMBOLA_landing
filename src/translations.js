@@ -7,7 +7,12 @@ export const translations = {
             chips: "Payment",
             events: "Events",
             login: "Login",
-            signup: "Sign Up"
+            signup: "Sign Up",
+            profile: {
+                summary: "Account Summary",
+                change_password: "Change Password",
+                logout: "Logout"
+            }
         },
         hero: {
             tagline_part1: "Where",
@@ -162,7 +167,12 @@ export const translations = {
             chips: "भुगतान",
             events: "इवेंट्स",
             login: "लॉगिन",
-            signup: "साइन अप करें"
+            signup: "साइन अप करें",
+            profile: {
+                summary: "खाता सारांश",
+                change_password: "पासवर्ड बदलें",
+                logout: "लॉगआउट"
+            }
         },
         hero: {
             tagline_part1: "जहाँ",
@@ -317,7 +327,12 @@ export const translations = {
             chips: "చెల్లింపు",
             events: "ఈవెంట్లు",
             login: "లాగిన్",
-            signup: "సైన్ అప్ చేయండి"
+            signup: "సైన్ అప్ చేయండి",
+            profile: {
+                summary: "ఖాతా సారాంశం",
+                change_password: "పాస్‌వర్డ్ మార్చండి",
+                logout: "లాగ్ అవుట్"
+            }
         },
         hero: {
             tagline_part1: "ఎక్కడ",

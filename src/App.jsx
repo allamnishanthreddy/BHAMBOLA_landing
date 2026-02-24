@@ -11,6 +11,8 @@ import DownloadSection from './components/DownloadSection';
 import WhatsAppButton from './components/WhatsAppButton';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import AccountSummary from './pages/AccountSummary';
+import ChangePassword from './pages/ChangePassword';
 import RatingsSection from './components/RatingsSection';
 import VideoTransition from './components/VideoTransition';
 import AIBotSection from './components/AIBotSection';
@@ -43,6 +45,8 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/intro" element={<VideoTransition />} />
+            <Route path="/account" element={<AccountSummary />} />
+            <Route path="/change-password" element={<ChangePassword />} />
           </Routes>
         </Router>
       </LanguageProvider>

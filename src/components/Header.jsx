@@ -8,6 +8,7 @@ import logo from '../assets/images/logo_final_transparent.png';
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [showProfileMenu, setShowProfileMenu] = useState(false);
     const { language, toggleLanguage } = useLanguage();
     const t = translations[language];
     const { user, logout } = useAuth();
@@ -16,9 +17,21 @@ const Header = () => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
+
+        const handleClickOutside = (event) => {
+            if (showProfileMenu && !event.target.closest('.profile-dropdown-container')) {
+                setShowProfileMenu(false);
+            }
+        };
+
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+        window.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showProfileMenu]);
 
     // Language toggle is now handled by Context
 
@@ -63,18 +76,50 @@ const Header = () => {
                         <span className="text-xl text-bhambola-red">❓</span>
                     </button>
 
-                    {/* Login Button or User Profile */}
+                    {/* Login Button or User Profile Dropdown */}
                     {user ? (
-                        <div className="flex items-center gap-4">
-                            <span className="text-black font-bold hidden sm:inline">Hi, {user.name}</span>
+                        <div className="relative profile-dropdown-container">
                             <button
-                                onClick={logout}
-                                className="w-10 h-10 rounded-full bg-white flex items-center justify-center border-2 border-bhambola-red shadow-lg hover:scale-105 transition-transform group"
-                                title="User Profile / Logout"
+                                onClick={() => setShowProfileMenu(!showProfileMenu)}
+                                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-all"
                             >
-                                <span className="text-2xl group-hover:hidden">👤</span>
-                                <span className="text-sm font-bold hidden group-hover:block text-red-600">X</span>
+                                <span className="text-white font-bold hidden sm:inline text-sm">Hi, {user.name}</span>
+                                <div className="w-8 h-8 rounded-full bg-bhambola-red flex items-center justify-center border border-bhambola-gold/50 shadow-inner">
+                                    <span className="text-lg">👤</span>
+                                </div>
                             </button>
+
+                            {/* Dropdown Menu */}
+                            {showProfileMenu && (
+                                <div className="absolute right-0 mt-2 w-56 bg-red-950/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up py-2">
+                                    <Link
+                                        to="/account"
+                                        className="flex items-center gap-3 px-4 py-3 text-sm text-white hover:bg-white/10 transition-colors border-b border-white/5"
+                                        onClick={() => setShowProfileMenu(false)}
+                                    >
+                                        <span className="text-lg">📋</span>
+                                        {t.nav.profile.summary}
+                                    </Link>
+                                    <Link
+                                        to="/change-password"
+                                        className="flex items-center gap-3 px-4 py-3 text-sm text-white hover:bg-white/10 transition-colors border-b border-white/5"
+                                        onClick={() => setShowProfileMenu(false)}
+                                    >
+                                        <span className="text-lg">🔑</span>
+                                        {t.nav.profile.change_password}
+                                    </Link>
+                                    <button
+                                        onClick={() => {
+                                            logout();
+                                            setShowProfileMenu(false);
+                                        }}
+                                        className="w-full flex items-center gap-3 px-4 py-3 text-sm text-red-400 hover:bg-white/10 transition-colors text-left"
+                                    >
+                                        <span className="text-lg">🚪</span>
+                                        {t.nav.profile.logout}
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     ) : (
                         <div className="flex items-center gap-3">
