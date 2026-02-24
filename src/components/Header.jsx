@@ -49,15 +49,35 @@ const Header = () => {
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-16">
-                    {Object.keys(t.nav).filter(key => key !== 'login' && key !== 'signup' && key !== 'profile').map((key) => (
-                        <a
-                            key={key}
-                            href={`#${key}`}
-                            className="text-white hover:text-bhambola-gold transition-colors font-bold text-sm tracking-wide uppercase"
-                        >
-                            {t.nav[key]}
-                        </a>
-                    ))}
+                    {Object.keys(t.nav).filter(key => key !== 'login' && key !== 'signup' && key !== 'profile').map((key) => {
+                        const isHomePage = window.location.pathname === '/';
+                        return (
+                            <Link
+                                key={key}
+                                to={isHomePage ? `#${key}` : `/#${key}`}
+                                onClick={(e) => {
+                                    if (isHomePage) {
+                                        e.preventDefault();
+                                        const element = document.getElementById(key);
+                                        if (element) {
+                                            const offset = 80; // Header height
+                                            const elementPosition = element.getBoundingClientRect().top;
+                                            const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                                            window.scrollTo({
+                                                top: offsetPosition,
+                                                behavior: 'smooth'
+                                            });
+                                        }
+                                        window.history.pushState(null, '', `#${key}`);
+                                    }
+                                }}
+                                className="text-white hover:text-bhambola-gold transition-colors font-bold text-sm tracking-wide uppercase"
+                            >
+                                {t.nav[key]}
+                            </Link>
+                        );
+                    })}
                 </nav>
 
                 {/* Actions - Right */}
@@ -78,20 +98,23 @@ const Header = () => {
 
                     {/* Login Button or User Profile Dropdown */}
                     {user ? (
-                        <div className="relative profile-dropdown-container">
+                        <div className="relative profile-dropdown-container flex items-center gap-3">
+                            {/* User Name on Left */}
+                            <span className="text-white font-bold hidden sm:inline text-sm tracking-wide">
+                                {user.name}
+                            </span>
+
+                            {/* Circular Icon on Right */}
                             <button
                                 onClick={() => setShowProfileMenu(!showProfileMenu)}
-                                className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-all"
+                                className="w-10 h-10 rounded-full bg-bhambola-red flex items-center justify-center border-2 border-bhambola-gold/50 shadow-lg hover:scale-105 transition-transform relative z-10"
                             >
-                                <span className="text-white font-bold hidden sm:inline text-sm">Hi, {user.name}</span>
-                                <div className="w-8 h-8 rounded-full bg-bhambola-red flex items-center justify-center border border-bhambola-gold/50 shadow-inner">
-                                    <span className="text-lg">👤</span>
-                                </div>
+                                <span className="text-xl">👤</span>
                             </button>
 
                             {/* Dropdown Menu */}
                             {showProfileMenu && (
-                                <div className="absolute right-0 mt-2 w-56 bg-red-950/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up py-2">
+                                <div className="absolute right-0 top-full mt-3 w-56 bg-red-950/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up py-2 z-20">
                                     <Link
                                         to="/account"
                                         className="flex items-center gap-3 px-4 py-3 text-sm text-white hover:bg-white/10 transition-colors border-b border-white/5"

@@ -8,7 +8,7 @@ const Community = () => {
     const t = translations[language].community;
 
     return (
-        <section id="rules" className="py-20">
+        <section id="community" className="py-20">
             <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-16">
                     {/* Rules & KYC */}
