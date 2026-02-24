@@ -53,23 +53,11 @@ const VideoTransition = () => {
                 </Button>
             </div>
 
-            {/* Blurred Background (to fill gaps for square/vertical videos) */}
-            <div className="absolute inset-0 opacity-40 blur-3xl scale-110 pointer-events-none">
-                <video
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                >
-                    <source src={introVideo} type="video/mp4" />
-                </video>
-            </div>
-
-            {/* Main Video Overlay - Pure video, larger size */}
-            <div className={`relative w-full h-full flex justify-center items-center transition-all duration-1000 ${isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+            {/* Main Video Overlay - Full screen cover */}
+            <div className={`relative w-full h-full transition-all duration-1000 ${isExiting ? 'scale-110' : (isEntered ? 'opacity-100 scale-100' : 'opacity-0 scale-105')}`}>
                 <video
                     ref={videoRef}
-                    className="max-w-full max-h-full object-contain shadow-[0_0_150px_rgba(0,0,0,0.8)] z-10"
+                    className="w-full h-full object-cover z-10"
                     autoPlay
                     playsInline
                     onEnded={handleVideoEnd}
