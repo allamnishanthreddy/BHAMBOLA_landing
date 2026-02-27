@@ -4,8 +4,8 @@ export const translations = {
             home: "Home",
             merchandise: "Merchandise",
             rules: "Rules",
+            legal: "WE ARE LEGAL!",
             chips: "Payment",
-            community: "Community",
             events: "Events",
             login: "Login",
             signup: "Sign Up",
@@ -126,7 +126,7 @@ export const translations = {
             password_placeholder: "Enter your password",
             login_btn: "Sign In",
             no_account: "Don't have an account?",
-            login_link: "Login here",
+            link_signup: "Sign Up",
             back_home: "Back to Home",
             mobile_label: "Mobile Number",
             mobile_placeholder: "Enter mobile number",
@@ -136,6 +136,8 @@ export const translations = {
             verify_otp: "Verify & Login",
             login_mobile: "Login with Mobile",
             login_email: "Login with Email",
+            signup_mobile: "Sign up with Mobile",
+            signup_email: "Sign up with Email",
             social_google: "Continue with Google",
             social_apple: "Continue with Apple",
             social_microsoft: "Continue with Microsoft",
@@ -146,7 +148,7 @@ export const translations = {
             password_create_placeholder: "Create a password",
             signup_btn: "Sign Up",
             has_account: "Already have an account?",
-            login_link: "Sign In",
+            link_login: "Sign In",
             failed_login: "Failed to login",
             failed_signup: "Failed to create account",
             passwords_mismatch: "Passwords do not match"
@@ -194,7 +196,9 @@ export const translations = {
             rule4: "Universal Access: All payment methods accepted including Credit/Debit Cards.",
             rule5: "Regulatory Compliance: We follow GOI Online Gaming Act (2025). No cash winnings.",
             last_tx: "Last Transaction",
-            buy_more: "Increase Your Balance"
+            buy_more: "Increase Your Balance",
+            min_chips: "MINIMUM: 50 CHIPS",
+            chip_rate: "(₹1 = 1 CHIP)"
         }
     },
     HI: {
@@ -202,8 +206,8 @@ export const translations = {
             home: "होम",
             merchandise: "सामान",
             rules: "नियम",
+            legal: "हम कानूनी हैं!",
             chips: "भुगतान",
-            community: "समुदाय",
             events: "इवेंट्स",
             login: "लॉगिन",
             signup: "साइन अप करें",
@@ -324,7 +328,7 @@ export const translations = {
             password_placeholder: "अपना पासवर्ड दर्ज करें",
             login_btn: "साइन इन करें",
             no_account: "खाता नहीं है?",
-            login_link: "यहाँ लॉगिन करें",
+            link_signup: "साइन अप करें",
             back_home: "वापस होम पर",
             mobile_label: "मोबाइल नंबर",
             mobile_placeholder: "मोबाइल नंबर दर्ज करें",
@@ -334,6 +338,8 @@ export const translations = {
             verify_otp: "सत्यापित करें और लॉगिन करें",
             login_mobile: "मोबाइल से लॉगिन करें",
             login_email: "ईमेल से लॉगिन करें",
+            signup_mobile: "मोबाइल से साइन अप करें",
+            signup_email: "ईमेल से साइन अप करें",
             social_google: "गूगल के साथ जारी रखें",
             social_apple: "एप्पल के साथ जारी रखें",
             social_microsoft: "माइक्रोसॉफ्ट के साथ जारी रखें",
@@ -344,7 +350,7 @@ export const translations = {
             password_create_placeholder: "एक पासवर्ड बनाएं",
             signup_btn: "साइन अप करें",
             has_account: "पहले से खाता है?",
-            login_link: "साइन इन करें",
+            link_login: "साइन इन करें",
             failed_login: "लॉगिन करने में विफल",
             failed_signup: "खाता बनाने में विफल",
             passwords_mismatch: "पासवर्ड मेल नहीं खाते"
@@ -392,7 +398,9 @@ export const translations = {
             rule4: "यूनिवर्सल एक्सेस: क्रेडिट/डेबिट कार्ड सहित सभी भुगतान विधियां स्वीकार की जाती हैं।",
             rule5: "नियामक अनुपालन: हम भारत सरकार ऑनलाइन गेमिंग अधिनियम (2025) का पालन करते हैं। कोई नकद जीत नहीं।",
             last_tx: "अंतिम लेनदेन",
-            buy_more: "अपना बैलेंस बढ़ाएं"
+            buy_more: "अपना बैलेंस बढ़ाएं",
+            min_chips: "न्यूनतम: 50 चिप्स",
+            chip_rate: "(₹1 = 1 चिप)"
         }
     },
     TE: {
@@ -400,8 +408,8 @@ export const translations = {
             home: "హోమ్",
             merchandise: "వస్తువులు",
             rules: "నియమాలు",
+            legal: "మేము చట్టబద్ధమైనవారము!",
             chips: "చెల్లింపు",
-            community: "కమ్యూనిటీ",
             events: "ఈవెంట్లు",
             login: "లాగిన్",
             signup: "సైన్ అప్ చేయండి",
@@ -522,7 +530,7 @@ export const translations = {
             password_placeholder: "మీ పాస్‌వర్డ్‌ను నమోదు చేయండి",
             login_btn: "సైన్ ఇన్ చేయండి",
             no_account: "ఖాతా లేదా?",
-            login_link: "ఇక్కడ లాగిన్ చేయండి",
+            link_signup: "సైన్ అప్ చేయండి",
             back_home: "హోమ్‌కు తిరిగి వెళ్లండి",
             mobile_label: "మొబైల్ సంఖ్య",
             mobile_placeholder: "మొబైల్ సంఖ్యను నమోదు చేయండి",
@@ -532,6 +540,8 @@ export const translations = {
             verify_otp: "ధృవీకరించండి & లాగిన్ చేయండి",
             login_mobile: "మొబైల్‌తో లాగిన్ చేయండి",
             login_email: "ఇమెయిల్‌తో లాగిన్ చేయండి",
+            signup_mobile: "మొబైల్‌తో సైన్ అప్ చేయండి",
+            signup_email: "ఇమెయిల్‌తో సైన్ అప్ చేయండి",
             social_google: "గూగుల్‌తో కొనసాగండి",
             social_apple: "యాపిల్‌తో కొనసాగండి",
             social_microsoft: "మైక్రోసాఫ్ట్‌తో కొనసాగండి",
@@ -542,7 +552,7 @@ export const translations = {
             password_create_placeholder: "ఒక పాస్‌వర్డ్‌ను సృష్టించండి",
             signup_btn: "సైన్ అప్ చేయండి",
             has_account: "ఇప్పటికే ఖాతా ఉందా?",
-            login_link: "సైన్ ఇన్ చేయండి",
+            link_login: "సైన్ ఇన్ చేయండి",
             failed_login: "లాగిన్ చేయడంలో విఫలమైంది",
             failed_signup: "ఖాతా సృష్టించడంలో విఫలమైంది",
             passwords_mismatch: "పాస్‌వర్డ్‌లు సరిపోలడం లేదు"
@@ -590,7 +600,9 @@ export const translations = {
             rule4: "యూనివర్సల్ యాక్సెస్: క్రెడిట్/డెబిట్ కార్డులతో సహా అన్ని చెల్లింపు పద్ధతులు ఆమోదించబడతాయి.",
             rule5: "నియంత్రణ సమ్మతి: మేము GOI ఆన్‌లైన్ గేమింగ్ చట్టం (2025) ని అనుసరిస్తాము. నగదు గెలుపులు లేవు.",
             last_tx: "చివరి లావాదేవీ",
-            buy_more: "మీ బ్యాలెన్స్‌ను పెంచుకోండి"
+            buy_more: "మీ బ్యాలెన్స్‌ను పెంచుకోండి",
+            min_chips: "కనీసం: 50 చిప్స్",
+            chip_rate: "(₹1 = 1 చిప్)"
         }
     }
 };

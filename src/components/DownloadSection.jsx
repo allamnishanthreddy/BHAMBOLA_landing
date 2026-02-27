@@ -2,23 +2,26 @@ import React from 'react';
 import Button from './ui/Button';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
+import logo from '../assets/images/logo_official_2024.png';
 
 const DownloadSection = () => {
     const { language } = useLanguage();
     const t = translations[language].download;
 
     return (
-        <section className="py-20 relative overflow-hidden">
-            {/* Background gradients */}
-            <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-white z-0"></div>
+        <section className="py-20 relative overflow-hidden bg-gradient-to-r from-red-950 via-red-900 to-black">
+            {/* Background elements */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-bhambola-red/20 to-transparent"></div>
+            </div>
 
             <div className="container mx-auto px-4 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
                 <div className="md:w-1/2 space-y-6">
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                    <h2 className="text-5xl md:text-7xl font-black text-white font-['Luckiest_Guy'] tracking-tight italic uppercase leading-[0.9]">
                         {t.title_part1} <br />
-                        <span className="text-bhambola-red">{t.title_part2}</span>
+                        <span className="text-bhambola-red drop-shadow-[0_0_15px_rgba(214,0,0,0.5)]">{t.title_part2}</span>
                     </h2>
-                    <p className="text-gray-600 text-lg max-w-md">
+                    <p className="text-red-100/80 text-lg md:text-xl max-w-md font-['Playfair_Display'] italic font-semibold leading-relaxed">
                         {t.desc}
                     </p>
 
@@ -46,8 +49,8 @@ const DownloadSection = () => {
                         {/* Screen Content Mockup */}
                         <div className="absolute inset-0 bg-gradient-to-b from-gray-800 to-black flex items-center justify-center">
                             <div className="text-center p-4">
-                                <div className="w-16 h-16 bg-bhambola-red rounded-full mx-auto mb-4 flex items-center justify-center border-2 border-bhambola-gold">
-                                    <span className="text-xl font-bold text-bhambola-gold">B</span>
+                                <div className="w-24 h-24 bg-transparent rounded-full mx-auto mb-4 flex items-center justify-center p-2">
+                                    <img src={logo} alt="Bhambola Logo" className="w-full h-full object-contain filter brightness-110 drop-shadow-lg" />
                                 </div>
                                 <p className="text-gray-400 text-sm">{t.preview_text}</p>
                             </div>

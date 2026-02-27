@@ -17,11 +17,11 @@ const Hero = () => {
                 {/* Content */}
                 <div className="space-y-6 animate-fade-in-up">
 
-                    <h1 className="text-4xl md:text-6xl font-bold leading-tight drop-shadow-lg">
+                    <h1 className="text-4xl md:text-6xl font-black leading-tight drop-shadow-lg font-['Luckiest_Guy'] tracking-wider italic">
                         {t.tagline_part1} <span className="text-bhambola-red drop-shadow-sm">{t.tagline_part2}</span> {t.tagline_part3}
                     </h1>
 
-                    <p className="text-white text-sm md:text-base max-w-lg leading-relaxed font-medium drop-shadow-sm">
+                    <p className="text-white text-base md:text-lg max-w-lg leading-relaxed font-['Playfair_Display'] italic drop-shadow-sm">
                         {t.subtitle}
                     </p>
 
@@ -71,32 +71,29 @@ const Hero = () => {
                     </div>
 
                     {/* Flower-falling Casino Chips - Replacing static chips */}
-                    {/* Chip 1 */}
-                    <div className="absolute top-0 right-10 w-32 h-32 rounded-full bg-gradient-to-b from-bhambola-red to-red-900 border-[6px] border-dashed border-bhambola-gold shadow-2xl animate-flower-fall flex items-center justify-center transform hover:scale-105 transition-transform z-20">
-                        <div className="text-center">
-                            <div className="text-xs text-bhambola-gold/80 font-bold uppercase tracking-widest">Chip</div>
-                            <div className="text-3xl font-bold text-white drop-shadow-md">50</div>
-                        </div>
+                    {/* Chip 1 - Red */}
+                    <div className="absolute top-0 right-10 w-32 h-32 casino-chip casino-chip-red animate-flower-fall transform hover:scale-105 transition-transform z-20">
+                        <div className="casino-chip-inner"></div>
                     </div>
-                    {/* Chip 2 */}
-                    <div className="absolute top-0 left-20 w-32 h-32 rounded-full bg-gradient-to-b from-bhambola-red to-red-900 border-[6px] border-dashed border-bhambola-gold shadow-2xl animate-flower-fall flex items-center justify-center transform hover:scale-105 transition-transform z-20" style={{ animationDelay: '2s', animationDuration: '9s' }}>
-                        <div className="text-center">
-                            <div className="text-xs text-bhambola-gold/80 font-bold uppercase tracking-widest">Chip</div>
-                            <div className="text-3xl font-bold text-white drop-shadow-md">50</div>
-                        </div>
+                    {/* Chip 2 - Blue */}
+                    <div className="absolute top-0 left-20 w-32 h-32 casino-chip casino-chip-blue animate-flower-fall transform hover:scale-105 transition-transform z-20" style={{ animationDelay: '2s', animationDuration: '9s' }}>
+                        <div className="casino-chip-inner"></div>
                     </div>
-                    {/* Chip 3 */}
-                    <div className="absolute top-0 right-1/3 w-32 h-32 rounded-full bg-gradient-to-b from-bhambola-red to-red-900 border-[6px] border-dashed border-bhambola-gold shadow-2xl animate-flower-fall flex items-center justify-center transform hover:scale-105 transition-transform z-20" style={{ animationDelay: '5s', animationDuration: '10s' }}>
-                        <div className="text-center">
-                            <div className="text-xs text-bhambola-gold/80 font-bold uppercase tracking-widest">Chip</div>
-                            <div className="text-3xl font-bold text-white drop-shadow-md">50</div>
-                        </div>
+                    {/* Chip 3 - Gold */}
+                    <div className="absolute top-0 right-1/3 w-32 h-32 casino-chip casino-chip-gold animate-flower-fall transform hover:scale-105 transition-transform z-20" style={{ animationDelay: '5s', animationDuration: '10s' }}>
+                        <div className="casino-chip-inner"></div>
                     </div>
 
                     {/* Additional Background 3D Elements */}
-                    <div className="absolute top-1/4 left-[-50px] w-20 h-20 rounded-full bg-gradient-to-b from-red-600 to-red-800 border-2 border-dashed border-white/50 shadow-xl animate-float blur-[2px] opacity-60 transform rotate-45" style={{ animationDelay: '0.5s' }}></div>
-                    <div className="absolute bottom-1/3 right-1/4 w-16 h-16 rounded-full bg-gradient-to-b from-bhambola-gold to-yellow-600 border-2 border-dashed border-white/50 shadow-xl animate-float blur-[1px] opacity-70 transform -rotate-12" style={{ animationDelay: '2s' }}></div>
-                    <div className="absolute top-20 left-1/3 w-12 h-12 rounded-full bg-gradient-to-b from-green-600 to-green-800 border-2 border-dashed border-white/50 shadow-xl animate-float blur-[3px] opacity-40 transform rotate-90" style={{ animationDelay: '1s' }}></div>
+                    <div className="absolute top-1/4 left-[-50px] w-20 h-20 casino-chip casino-chip-red animate-float blur-[2px] opacity-60 transform rotate-45" style={{ animationDelay: '0.5s' }}>
+                        <div className="casino-chip-inner w-full h-full scale-50"></div>
+                    </div>
+                    <div className="absolute bottom-1/3 right-1/4 w-16 h-16 casino-chip casino-chip-gold animate-float blur-[1px] opacity-70 transform -rotate-12" style={{ animationDelay: '2s' }}>
+                        <div className="casino-chip-inner w-full h-full scale-50"></div>
+                    </div>
+                    <div className="absolute top-20 left-1/3 w-12 h-12 casino-chip casino-chip-blue animate-float blur-[3px] opacity-40 transform rotate-90" style={{ animationDelay: '1s' }}>
+                        <div className="casino-chip-inner w-full h-full scale-50"></div>
+                    </div>
 
                     {/* Animated Gift */}
                     <div className="absolute top-1/2 -right-4 w-20 h-20 glass rounded-xl animate-float flex items-center justify-center border border-white/40 shadow-lg bg-bhambola-gold/20 backdrop-blur-md" style={{ animationDelay: '2.5s' }}>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Button = ({ children, variant = 'primary', className = '', ...props }) => {
-    const baseStyles = "px-6 py-3 rounded-xl font-bold transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center gap-2";
+    const baseStyles = "px-6 py-3 rounded-xl font-black transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center gap-2 font-['Cinzel'] tracking-widest uppercase italic";
 
     const variants = {
         primary: "bg-bhambola-red text-white shadow-lg shadow-red-900/20 hover:shadow-red-600/40 border border-red-500",

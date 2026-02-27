@@ -47,7 +47,7 @@ const VideoTransition = () => {
                 <Button
                     variant="secondary"
                     onClick={handleSkip}
-                    className="px-8 py-2.5 text-sm font-bold bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 shadow-2xl text-white transition-all transform hover:scale-105 rounded-full"
+                    className="px-10 py-3 text-sm font-black bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 shadow-2xl text-white transition-all transform hover:scale-105 rounded-full tracking-[0.2em]"
                 >
                     Skip Intro ⏭
                 </Button>

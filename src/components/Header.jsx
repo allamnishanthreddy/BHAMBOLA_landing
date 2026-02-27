@@ -4,7 +4,8 @@ import { useLanguage } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import { translations } from '../translations';
 import Button from './ui/Button';
-import logo from '../assets/images/logo_final_transparent.png';
+import logo from '../assets/images/logo_official_2024.png';
+import TransparentLogo from './ui/TransparentLogo';
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -36,75 +37,73 @@ const Header = () => {
     // Language toggle is now handled by Context
 
     return (
-        <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-red-950/90 backdrop-blur-md shadow-lg py-2' : 'py-4 bg-transparent'}`}>
-            <div className="container mx-auto px-4 flex justify-between items-center">
+        <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gradient-to-r from-red-950 via-red-900 to-black shadow-lg py-1' : 'py-3 bg-transparent'}`}>
+            <div className="max-w-[1920px] mx-auto px-6 md:px-12 flex justify-between items-center h-full">
                 {/* Logo - Left Corner */}
-                <div className="flex items-center gap-2">
-                    {/* Logo with removed white background technique */}
-                    {/* Logo - White transparent version */}
-                    <div className="relative">
-                        <img src={logo} alt="Bhambola Logo" className="h-20 md:h-28 w-auto object-contain" />
-                    </div>
+                <div className="flex-shrink-0">
+                    {/* Logo - Clickable to Home */}
+                    <a href="/" className="relative z-20 hover:scale-110 transition-transform duration-300 block -ml-4">
+                        <TransparentLogo
+                            src={logo}
+                            className="h-20 md:h-28 w-auto"
+                        />
+                    </a>
                 </div>
 
-                {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-16">
+                {/* Desktop Nav - Centered Spacing */}
+                <nav className="hidden xl:flex items-center gap-12">
                     {Object.keys(t.nav).filter(key => key !== 'login' && key !== 'signup' && key !== 'profile').map((key) => {
                         const isHomePage = window.location.pathname === '/';
+
+                        // Special handling for the "WE ARE LEGAL!" button
+                        if (key === 'legal') {
+                            return (
+                                <Link
+                                    key={key}
+                                    to="/legal-policy"
+                                    className="px-6 py-2 bg-gradient-to-r from-bhambola-gold to-yellow-600 text-black font-black rounded-lg text-xs tracking-widest uppercase hover:scale-105 transition-all shadow-lg hover:shadow-bhambola-gold/40 font-['Cinzel']"
+                                >
+                                    {t.nav[key]}
+                                </Link>
+                            );
+                        }
+
                         return (
-                            <Link
+                            <a
                                 key={key}
-                                to={isHomePage ? `#${key}` : `/#${key}`}
+                                href={isHomePage ? `#${key}` : `/#${key}`}
+                                className="text-white hover:text-bhambola-gold transition-all duration-300 text-sm font-black tracking-widest uppercase py-2 relative group font-['Cinzel']"
                                 onClick={(e) => {
                                     if (isHomePage) {
                                         e.preventDefault();
                                         const element = document.getElementById(key);
-                                        if (element) {
-                                            const offset = 80; // Header height
-                                            const elementPosition = element.getBoundingClientRect().top;
-                                            const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-                                            window.scrollTo({
-                                                top: offsetPosition,
-                                                behavior: 'smooth'
-                                            });
-                                        }
-                                        window.history.pushState(null, '', `#${key}`);
+                                        element?.scrollIntoView({ behavior: 'smooth' });
                                     }
                                 }}
-                                className="text-white hover:text-bhambola-gold transition-colors font-bold text-sm tracking-wide uppercase"
                             >
                                 {t.nav[key]}
-                            </Link>
+                                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-bhambola-gold transition-all duration-300 group-hover:w-full shadow-[0_0_10px_rgba(255,215,0,0.5)]"></span>
+                            </a>
                         );
                     })}
                 </nav>
 
-                {/* Actions - Right */}
+                {/* Account Section */}
                 <div className="flex items-center gap-4">
-                    {/* Language Toggle */}
-                    <button
-                        onClick={toggleLanguage}
-                        className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-xs font-bold hover:bg-white/10 transition-colors text-white"
-                        title="Switch Language"
-                    >
-                        {language}
-                    </button>
+                    <div className="flex items-center">
+                        <Link
+                            to="/faqs"
+                            className="w-10 h-10 flex items-center justify-center bg-bhambola-gold hover:bg-white text-black font-black rounded-full transition-all shadow-lg hover:scale-110"
+                        >
+                            <span className="text-xl">?</span>
+                        </Link>
+                    </div>
 
-                    {/* FAQs Icon */}
-                    <button className="flex items-center gap-2 text-sm font-medium text-white hover:text-bhambola-gold transition-colors">
-                        <span className="text-xl text-bhambola-red">❓</span>
-                    </button>
-
-                    {/* Login Button or User Profile Dropdown */}
                     {user ? (
                         <div className="relative profile-dropdown-container flex items-center gap-3">
-                            {/* User Name on Left */}
                             <span className="text-white font-bold hidden sm:inline text-sm tracking-wide">
                                 {user.name}
                             </span>
-
-                            {/* Circular Icon on Right */}
                             <button
                                 onClick={() => setShowProfileMenu(!showProfileMenu)}
                                 className="w-10 h-10 rounded-full bg-bhambola-red flex items-center justify-center border-2 border-bhambola-gold/50 shadow-lg hover:scale-105 transition-transform relative z-10"
@@ -112,7 +111,6 @@ const Header = () => {
                                 <span className="text-xl">👤</span>
                             </button>
 
-                            {/* Dropdown Menu */}
                             {showProfileMenu && (
                                 <div className="absolute right-0 top-full mt-3 w-56 bg-red-950/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-fade-in-up py-2 z-20">
                                     <Link
@@ -145,16 +143,16 @@ const Header = () => {
                             )}
                         </div>
                     ) : (
-                        <div className="flex items-center gap-3">
-                            <Link to="/login">
-                                <button className="hidden sm:block px-6 py-2 text-sm font-bold text-white hover:text-bhambola-gold transition-colors border-2 border-transparent hover:border-bhambola-gold/30 rounded-lg">
-                                    {t.nav.login}
+                        <div className="flex items-center gap-3 flex-nowrap shrink-0">
+                            <Link to="/signup">
+                                <button className="px-6 py-2 text-sm font-bold text-white hover:text-bhambola-gold transition-colors border-2 border-transparent hover:border-bhambola-gold/30 rounded-lg whitespace-nowrap">
+                                    {t.nav.signup}
                                 </button>
                             </Link>
-                            <Link to="/signup">
-                                <Button variant="secondary" className="hidden sm:block px-6 py-2 text-sm font-bold shadow-lg">
-                                    {t.nav.signup}
-                                </Button>
+                            <Link to="/login">
+                                <button className="px-6 py-2 text-sm font-bold text-white hover:text-bhambola-gold transition-colors border-2 border-transparent hover:border-bhambola-gold/30 rounded-lg whitespace-nowrap">
+                                    {t.nav.login}
+                                </button>
                             </Link>
                         </div>
                     )}

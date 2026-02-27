@@ -16,6 +16,11 @@ import ChangePassword from './pages/ChangePassword';
 import RatingsSection from './components/RatingsSection';
 import VideoTransition from './components/VideoTransition';
 import AIBotSection from './components/AIBotSection';
+import FAQPage from './pages/FAQPage';
+import TermsPage from './pages/TermsPage';
+import GameRulesPage from './pages/GameRulesPage';
+import LegalPolicyPage from './pages/LegalPolicyPage';
+import AboutUsPage from './pages/AboutUsPage';
 
 function LandingPage() {
   return (
@@ -48,6 +53,11 @@ function App() {
             <Route path="/intro" element={<VideoTransition />} />
             <Route path="/account" element={<AccountSummary />} />
             <Route path="/change-password" element={<ChangePassword />} />
+            <Route path="/faqs" element={<FAQPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/rules" element={<GameRulesPage />} />
+            <Route path="/legal-policy" element={<LegalPolicyPage />} />
+            <Route path="/about" element={<AboutUsPage />} />
           </Routes>
         </Router>
       </LanguageProvider>
