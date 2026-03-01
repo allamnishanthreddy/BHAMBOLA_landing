@@ -10,7 +10,7 @@ import TransparentLogo from './ui/TransparentLogo';
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [showProfileMenu, setShowProfileMenu] = useState(false);
-    const { language, toggleLanguage } = useLanguage();
+    const { language, toggleLanguage, setLanguage } = useLanguage();
     const t = translations[language];
     const { user, logout } = useAuth();
 
@@ -90,13 +90,33 @@ const Header = () => {
 
                 {/* Account Section */}
                 <div className="flex items-center gap-4">
-                    <div className="flex items-center">
+                    <div className="flex items-center gap-3">
                         <Link
                             to="/faqs"
                             className="w-10 h-10 flex items-center justify-center bg-bhambola-gold hover:bg-white text-black font-black rounded-full transition-all shadow-lg hover:scale-110"
                         >
                             <span className="text-xl">?</span>
                         </Link>
+
+                        {/* Language Selector */}
+                        <div className="relative group">
+                            <button className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-lg transition-all border border-white/10">
+                                <span className="text-lg">🌐</span>
+                                <span className="text-xs font-bold font-['Cinzel']">{language}</span>
+                            </button>
+
+                            <div className="absolute right-0 top-full mt-2 w-32 bg-red-950/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                {['EN', 'HI', 'TE'].map((lang) => (
+                                    <button
+                                        key={lang}
+                                        onClick={() => setLanguage(lang)}
+                                        className={`w-full text-left px-4 py-2 text-xs font-bold font-['Cinzel'] hover:bg-white/10 transition-colors ${language === lang ? 'text-bhambola-gold bg-white/5' : 'text-white'}`}
+                                    >
+                                        {lang === 'EN' ? 'English' : lang === 'HI' ? 'हिंदी' : 'తెలుగు'}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
                     </div>
 
                     {user ? (
