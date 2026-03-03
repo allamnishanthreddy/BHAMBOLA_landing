@@ -52,7 +52,21 @@ export const AuthProvider = ({ children }) => {
     };
 
     const socialLogin = (provider) => {
-        // Mock social login
+        // Redirect to provider auth pages
+        const providerUrls = {
+            'Google': 'https://accounts.google.com/',
+            'Apple': 'https://appleid.apple.com/',
+            'Microsoft': 'https://login.microsoftonline.com/'
+        };
+
+        const url = providerUrls[provider];
+        if (url) {
+            localStorage.setItem('pending_social_login', provider);
+            window.location.href = url;
+            return true;
+        }
+
+        // Fallback for mock if provider unknown
         const userData = {
             name: `${provider} User`,
             email: `${provider.toLowerCase()}@example.com`,
@@ -66,13 +80,27 @@ export const AuthProvider = ({ children }) => {
         return true;
     };
 
+    const completeSocialLogin = (provider) => {
+        const userData = {
+            name: `${provider} User`,
+            email: `${provider.toLowerCase()}@example.com`,
+            balance: 5000,
+            purchasedChips: 0,
+            dailyUsage: 0,
+            transactions: []
+        };
+        setUser(userData);
+        localStorage.setItem('user', JSON.stringify(userData));
+        localStorage.removeItem('pending_social_login');
+    };
+
     const logout = () => {
         setUser(null);
         localStorage.removeItem('user');
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, loginWithPhone, verifyOTP, socialLogin, logout }}>
+        <AuthContext.Provider value={{ user, login, loginWithPhone, verifyOTP, socialLogin, completeSocialLogin, logout }}>
             {children}
         </AuthContext.Provider>
     );

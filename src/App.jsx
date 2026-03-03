@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import { LanguageProvider } from './context/LanguageContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -21,6 +22,21 @@ import TermsPage from './pages/TermsPage';
 import GameRulesPage from './pages/GameRulesPage';
 import LegalPolicyPage from './pages/LegalPolicyPage';
 import AboutUsPage from './pages/AboutUsPage';
+
+function SocialLoginHandler() {
+  const navigate = useNavigate();
+  const { completeSocialLogin } = useAuth();
+
+  useEffect(() => {
+    const pendingProvider = localStorage.getItem('pending_social_login');
+    if (pendingProvider) {
+      completeSocialLogin(pendingProvider);
+      navigate('/intro');
+    }
+  }, [completeSocialLogin, navigate]);
+
+  return null;
+}
 
 function LandingPage() {
   return (
@@ -46,6 +62,7 @@ function App() {
     <AuthProvider>
       <LanguageProvider>
         <Router>
+          <SocialLoginHandler />
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />

@@ -46,9 +46,7 @@ const LoginPage = () => {
     };
 
     const handleSocialLogin = (provider) => {
-        if (socialLogin(provider)) {
-            navigate('/intro');
-        }
+        socialLogin(provider);
     };
 
     return (

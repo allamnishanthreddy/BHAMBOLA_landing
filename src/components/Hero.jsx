@@ -170,7 +170,7 @@ const Hero = () => {
                     </div>
 
                     {/* High-Impact Red & Blue Falling Chips - Fixed Transparency & Density */}
-                    {[...Array(12)].map((_, i) => {
+                    {[...Array(6)].map((_, i) => {
                         const styleIdx = i % 2; // Alternating Red and Blue
                         const size = 64 + (i % 4) * 12; // 64px to 100px (Bold & Modern)
                         return (
