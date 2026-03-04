@@ -37,7 +37,7 @@ const Footer = () => {
                     <div className="space-y-4">
                         <h4 className="text-lg font-black text-bhambola-gold font-['Cinzel'] tracking-widest uppercase italic">{t.legal_title}</h4>
                         <ul className="space-y-2 text-gray-400 text-sm font-['Cinzel'] font-bold">
-                            <li><Link to="/terms" className="hover:text-white uppercase tracking-wider">{t.privacy}</Link></li>
+                            <li><Link to="/privacy" className="hover:text-white uppercase tracking-wider">{t.privacy}</Link></li>
                             <li><Link to="/legal-policy" className="hover:text-white uppercase tracking-wider">{t.legal}</Link></li>
                             <li><Link to="/faqs" className="hover:text-white uppercase tracking-wider">FAQs</Link></li>
                             <li><Link to="/about" className="hover:text-white uppercase tracking-wider">{t.about}</Link></li>

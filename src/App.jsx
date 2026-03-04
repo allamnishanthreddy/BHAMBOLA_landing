@@ -22,6 +22,7 @@ import TermsPage from './pages/TermsPage';
 import GameRulesPage from './pages/GameRulesPage';
 import LegalPolicyPage from './pages/LegalPolicyPage';
 import AboutUsPage from './pages/AboutUsPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import ScrollToTop from './components/ScrollToTop';
 
 function SocialLoginHandler() {
@@ -77,6 +78,7 @@ function App() {
             <Route path="/rules" element={<GameRulesPage />} />
             <Route path="/legal-policy" element={<LegalPolicyPage />} />
             <Route path="/about" element={<AboutUsPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
           </Routes>
         </Router>
       </LanguageProvider>
