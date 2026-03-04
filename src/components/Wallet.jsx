@@ -11,6 +11,13 @@ const Wallet = () => {
     const t = translations[language];
     const pt = t.pricing;
 
+    const chipsPackages = [
+        { chips: 100, price: 99, desc: "Starter Pack" },
+        { chips: 500, price: 449, desc: "Popular" },
+        { chips: 1500, price: 1299, desc: "Best Value" },
+        { chips: 5000, price: 3999, desc: "Pro Gamer" }
+    ];
+
     // Payment Methods Icons (Mock)
     const paymentMethods = [
         {
@@ -72,8 +79,24 @@ const Wallet = () => {
                             <span className="text-white">{pt.title_suffix}</span>
                         </h2>
                         <p className="text-red-100 text-lg md:text-xl max-w-2xl mx-auto font-medium font-['Playfair_Display'] italic drop-shadow-md">
-                            {pt.subtitle}
                         </p>
+                    </div>
+
+                    {/* Chips Packages Grid - Always visible to showcase */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                        {chipsPackages.map((pkg, idx) => (
+                            <div key={idx} className="bg-black/40 border border-white/10 rounded-[2rem] p-8 hover:border-bhambola-gold transition-all duration-500 group relative overflow-hidden">
+                                <div className="absolute top-0 right-0 w-24 h-24 bg-bhambola-gold/5 blur-2xl rounded-full -mr-12 -mt-12 group-hover:bg-bhambola-gold/10 transition-colors"></div>
+                                <div className="text-bhambola-gold font-['Cinzel'] font-black text-xl mb-2 tracking-widest">{pkg.chips} CHIPS</div>
+                                <div className="text-white text-4xl font-['Luckiest_Guy'] italic tracking-tighter">₹{pkg.price}</div>
+                                <div className="mt-6 pt-6 border-t border-white/5 flex justify-between items-center">
+                                    <span className="text-[10px] text-gray-500 font-black uppercase tracking-[0.3em] font-['Cinzel']">{pkg.desc}</span>
+                                    <div className="w-10 h-10 rounded-full bg-bhambola-red/10 flex items-center justify-center group-hover:bg-bhambola-red transition-all transform group-hover:rotate-45">
+                                        <span className="text-white text-sm">→</span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
 
                     {!user ? (
@@ -83,7 +106,7 @@ const Wallet = () => {
                             <div className="relative bg-[#800000]/80 backdrop-blur-3xl border border-white/10 rounded-3xl p-12 text-center space-y-8">
                                 <div className="space-y-6">
                                     <Link to="/login">
-                                        <button className="px-16 py-5 bg-bhambola-gold hover:bg-white text-black font-black text-2xl rounded-2xl transition-all hover:scale-105 shadow-2xl shadow-bhambola-gold/20 font-['Luckiest_Guy'] tracking-widest italic">
+                                        <button className="px-16 py-5 bg-bhambola-gold hover:bg-[#800000] hover:text-white border-2 border-transparent hover:border-bhambola-gold text-black font-black text-2xl rounded-2xl transition-all hover:scale-105 shadow-2xl shadow-bhambola-gold/20 font-['Luckiest_Guy'] tracking-widest italic">
                                             LOGIN NOW !
                                         </button>
                                     </Link>
