@@ -6,35 +6,113 @@ const LegalPolicyPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const professionalLegalContent = (
-        <div className="space-y-12 pr-4">
-            <section>
-                <h4 className="text-xl font-black text-white mb-4 uppercase tracking-widest border-l-4 border-bhambola-gold pl-4">1. Preamble and Nature of Services</h4>
-                <p>Einstein Brains Group (hereinafter referred to as "the Company") operates the Bhambola platform as a community-centric, recreational gaming environment. Users acknowledge that the platform is intended strictly for entertainment and social engagement within verified community groups.</p>
+        <div className="space-y-12 pr-4 text-gray-300 font-medium leading-relaxed">
+            <section className="bg-white/5 p-8 rounded-3xl border border-white/10">
+                <h4 className="text-xl font-black text-bhambola-gold mb-6 uppercase tracking-widest border-b border-bhambola-gold/20 pb-4">Legal Disclaimer</h4>
+                <p>Bhambola complies with the Promotion and Regulation of Online Gaming Act, 2025, the Information Technology Act, 2000, the IT Rules, 2021 (as amended), and all relevant state laws applicable in the Union of India for online games. Bhambola does not operate any kind of money or gambling related games, does not offer monetary rewards, and is not at all a gambling or betting platform.</p>
             </section>
 
-            <section>
-                <h4 className="text-xl font-black text-white mb-4 uppercase tracking-widest border-l-4 border-bhambola-red pl-4">2. Financial Limitations and Prize Policy</h4>
-                <p>In strict adherence to the Promotion and Regulation of Online Gaming Act 2025, the Company declares that:</p>
-                <ul className="list-disc pl-6 mt-4 space-y-2">
-                    <li>NO monetary rewards, cash prizes, or equivalents shall be disbursed to users.</li>
-                    <li>Payments made by users are classified as platform access fees/admission tokens.</li>
-                    <li>Participation does not constitute wagering, betting, or any form of financial speculation.</li>
+            <section className="space-y-6">
+                <h3 className="text-2xl font-black text-white uppercase tracking-tighter italic">WE ARE LEGAL – Compliance & Responsible Gaming Policy</h3>
+                <p>Bhambola operates as a community-based digital recreation platform and is committed to following all applicable Indian laws and responsible gaming practices. Our platform is designed for entertainment and social engagement, not for gambling or financial gain.</p>
+            </section>
+
+            <section className="space-y-6">
+                <h4 className="text-xl font-black text-white uppercase tracking-widest border-l-4 border-bhambola-red pl-4">1. Responsible Gaming & User Safety</h4>
+                <p>Bhambola promotes healthy and responsible participation in line with:</p>
+                <ul className="list-disc pl-8 space-y-2">
+                    <li>Information Technology Act, 2000</li>
+                    <li>IT (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021 (Amended 2023 – Rule 3, Rule 4, Rule 9)</li>
                 </ul>
+                <p>We discourage addictive behaviour and ensure transparent gameplay.</p>
             </section>
 
-            <section>
-                <h4 className="text-xl font-black text-white mb-4 uppercase tracking-widest border-l-4 border-bhambola-gold pl-4">3. Regulatory Compliance Framework</h4>
-                <p>The platform operates in full compliance with the following statutory instruments:</p>
-                <ul className="list-disc pl-6 mt-4 space-y-2">
-                    <li>Information Technology Act, 2000 (Sections 43A, 66, and 79) and Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021.</li>
-                    <li>The Public Gambling Act, 1867, and respective State-specific gaming regulations where applicable.</li>
-                    <li>Consumer Protection (E-Commerce) Rules, 2020.</li>
+            <section className="space-y-6">
+                <h4 className="text-xl font-black text-white uppercase tracking-widest border-l-4 border-bhambola-gold pl-4">2. Compliance with the Promotion and Regulation of Online Gaming Act, 2025</h4>
+                <p>Bhambola complies with all the Promotion and Regulation of Online Gaming Act, 2025, including but not limited to :</p>
+                <ul className="list-disc pl-8 space-y-2">
+                    <li><strong>Section 2</strong> – Definition of online games and online money games</li>
+                    <li><strong>Section 5</strong> – Prohibition of online money games</li>
+                    <li><strong>Section 6</strong> – Ban on promotion of money games</li>
+                    <li><strong>Section 7</strong> – Restriction on financial transfers for money games</li>
+                    <li><strong>Section 8</strong> – Oversight by the Online Gaming Authority</li>
+                    <li><strong>Sections 9–12</strong> – Penalties for violations</li>
+                    <li><strong>Section 14</strong> – Blocking of illegal gaming platforms</li>
                 </ul>
+                <p>Bhambola does not operate any online money or gambling related games as defined under Section 5 of this Act.</p>
             </section>
 
-            <section>
-                <h4 className="text-xl font-black text-white mb-4 uppercase tracking-widest border-l-4 border-bhambola-red pl-4">4. User Eligibility and Verification</h4>
-                <p>Access is restricted to individuals aged 18 years or older. Mandatory KYC (Aadhaar-based verification) is enforced to ensure community trust and regulatory transparency. The Company reserves the right to terminate accounts found in violation of these eligibility criteria.</p>
+            <section className="space-y-6">
+                <h4 className="text-xl font-black text-white uppercase tracking-widest border-l-4 border-bhambola-red pl-4">3. Entry-Based Participation Model</h4>
+                <p>All payments collected on Bhambola are strictly for:</p>
+                <ul className="list-disc pl-8 space-y-2">
+                    <li>Entry into community-based recreational games</li>
+                    <li>Participation in social and networking events</li>
+                    <li>Access to digital entertainment services</li>
+                </ul>
+                <p>These payments are not bets, stakes, or wagers. There is no financial risk or reward linked to game outcomes.</p>
+            </section>
+
+            <section className="space-y-6">
+                <h4 className="text-xl font-black text-white uppercase tracking-widest border-l-4 border-bhambola-gold pl-4">4. No Winnings, Rewards, or Prizes</h4>
+                <p>Bhambola does not provide:</p>
+                <ul className="list-disc pl-8 space-y-2">
+                    <li>Cash prizes</li>
+                    <li>Digital money</li>
+                    <li>Redeemable credits</li>
+                    <li>Gift vouchers</li>
+                    <li>Transferable rewards</li>
+                </ul>
+                <p>No participant can earn money or monetary value through gameplay. This ensures compliance with Section 5 of the Online Gaming Act, 2025 and avoids gambling classification.</p>
+            </section>
+
+            <section className="space-y-6">
+                <h4 className="text-xl font-black text-white uppercase tracking-widest border-l-4 border-bhambola-red pl-4">5. Private Community-Based Participation</h4>
+                <p>Participation is limited to verified members of approved gated communities. Players must join official community WhatsApp groups for:</p>
+                <ul className="list-disc pl-8 space-y-2">
+                    <li>Game updates</li>
+                    <li>Announcements</li>
+                    <li>Community guidelines</li>
+                    <li>Coordination</li>
+                </ul>
+                <p>All monthly community events are open to registered members, regardless of winning or losing. No user is excluded based on performance.</p>
+            </section>
+
+            <section className="space-y-6">
+                <h4 className="text-xl font-black text-white uppercase tracking-widest border-l-4 border-bhambola-gold pl-4">6. Non-Gambling Nature of the Platform</h4>
+                <p>Bhambola is not a gambling, betting, or casino platform under:</p>
+                <ul className="list-disc pl-8 space-y-2">
+                    <li>Public Gambling Act, 1867</li>
+                    <li>Relevant State Gaming Laws (including Telangana, Andhra Pradesh, Tamil Nadu, Karnataka, Kerala, Sikkim, Mizoram, Nagaland, Meghalaya, Assam, and other applicable state regulations)</li>
+                </ul>
+                <p>We do not allow betting between users, pooling of money, two-way cash transfers, or outcome-based payouts. The visual design and interface are only for entertainment purposes.</p>
+            </section>
+
+            <section className="space-y-6">
+                <h4 className="text-xl font-black text-white uppercase tracking-widest border-l-4 border-bhambola-red pl-4">7. Information Technology Act, 2000 Compliance</h4>
+                <p>Bhambola follows key provisions of the IT Act, including:</p>
+                <ul className="list-disc pl-8 space-y-2">
+                    <li><strong>Section 43A</strong> – Protection of user data</li>
+                    <li><strong>Section 66</strong> – Prevention of cyber offences</li>
+                    <li><strong>Section 79</strong> – Intermediary liability with due diligence</li>
+                </ul>
+                <p>We take reasonable steps to protect user information and platform security.</p>
+            </section>
+
+            <section className="space-y-6">
+                <h4 className="text-xl font-black text-white uppercase tracking-widest border-l-4 border-bhambola-gold pl-4">8. Merchandise Policy</h4>
+                <p>Any merchandise available on Bhambola:</p>
+                <ul className="list-disc pl-8 space-y-2">
+                    <li>Can only be purchased directly</li>
+                    <li>Cannot be won or earned through gameplay</li>
+                    <li>Is not linked to performance</li>
+                </ul>
+                <p>Merchandise is treated as a normal commercial product.</p>
+            </section>
+
+            <section className="space-y-6">
+                <h4 className="text-xl font-black text-white uppercase tracking-widest border-l-4 border-bhambola-red pl-4">9. Regulatory Cooperation</h4>
+                <p>Bhambola cooperates with Government authorities, regulatory bodies, and law enforcement agencies as required under applicable Indian laws.</p>
             </section>
         </div>
     );
