@@ -1,7 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LegalLayout from '../components/LegalLayout';
+import LegalModal from '../components/ui/LegalModal';
 
 const LegalPolicyPage = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const professionalLegalContent = (
+        <div className="space-y-12 pr-4">
+            <section>
+                <h4 className="text-xl font-black text-white mb-4 uppercase tracking-widest border-l-4 border-bhambola-gold pl-4">1. Preamble and Nature of Services</h4>
+                <p>Einstein Brains Group (hereinafter referred to as "the Company") operates the Bhambola platform as a community-centric, recreational gaming environment. Users acknowledge that the platform is intended strictly for entertainment and social engagement within verified community groups.</p>
+            </section>
+
+            <section>
+                <h4 className="text-xl font-black text-white mb-4 uppercase tracking-widest border-l-4 border-bhambola-red pl-4">2. Financial Limitations and Prize Policy</h4>
+                <p>In strict adherence to the Promotion and Regulation of Online Gaming Act 2025, the Company declares that:</p>
+                <ul className="list-disc pl-6 mt-4 space-y-2">
+                    <li>NO monetary rewards, cash prizes, or equivalents shall be disbursed to users.</li>
+                    <li>Payments made by users are classified as platform access fees/admission tokens.</li>
+                    <li>Participation does not constitute wagering, betting, or any form of financial speculation.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4 className="text-xl font-black text-white mb-4 uppercase tracking-widest border-l-4 border-bhambola-gold pl-4">3. Regulatory Compliance Framework</h4>
+                <p>The platform operates in full compliance with the following statutory instruments:</p>
+                <ul className="list-disc pl-6 mt-4 space-y-2">
+                    <li>Information Technology Act, 2000 (Sections 43A, 66, and 79) and Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021.</li>
+                    <li>The Public Gambling Act, 1867, and respective State-specific gaming regulations where applicable.</li>
+                    <li>Consumer Protection (E-Commerce) Rules, 2020.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h4 className="text-xl font-black text-white mb-4 uppercase tracking-widest border-l-4 border-bhambola-red pl-4">4. User Eligibility and Verification</h4>
+                <p>Access is restricted to individuals aged 18 years or older. Mandatory KYC (Aadhaar-based verification) is enforced to ensure community trust and regulatory transparency. The Company reserves the right to terminate accounts found in violation of these eligibility criteria.</p>
+            </section>
+        </div>
+    );
+
     return (
         <LegalLayout
             title="Legal Policy"
@@ -16,7 +53,7 @@ const LegalPolicyPage = () => {
                             <span className="text-bhambola-gold">Pure</span> Vibe. <br /> <span className="text-bhambola-red">Zero</span> Risks.
                         </h2>
                         <p className="text-2xl md:text-3xl leading-relaxed max-w-3xl mx-auto font-black italic bg-white/10 backdrop-blur-xl p-8 rounded-3xl border border-white/20 shadow-2xl">
-                            "No cap, we’re strictly for fun. No money, no gambling, just pure gaming energy."
+                            "No cap, we’re strictly for fun. No Money rewards, no gambling, just pure gaming energy."
                         </p>
                     </div>
                 </section>
@@ -24,7 +61,7 @@ const LegalPolicyPage = () => {
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* Safety Section */}
                     <section className="space-y-10 group">
-                        <h2 className="text-4xl font-black text-bhambola-gold uppercase italic tracking-widest border-l-8 border-bhambola-red pl-6 py-2">01. Safe AF</h2>
+                        <h2 className="text-4xl font-black text-bhambola-gold uppercase italic tracking-widest border-l-8 border-bhambola-red pl-6 py-2">01. Safe</h2>
                         <ul className="space-y-8">
                             <li className="p-8 rounded-[3rem] bg-gradient-to-br from-white/10 to-transparent border-2 border-white/10 shadow-2xl hover:border-bhambola-red/50 transition-all hover:scale-105 active:scale-95 cursor-default">
                                 <span className="block font-black text-white mb-3 text-2xl md:text-3xl uppercase tracking-tighter decoration-bhambola-red underline-offset-8 underline decoration-8">Real Talk</span>
@@ -43,15 +80,27 @@ const LegalPolicyPage = () => {
                         <ul className="space-y-8">
                             <li className="p-8 rounded-[3rem] bg-gradient-to-br from-white/10 to-transparent border-2 border-white/10 shadow-2xl hover:border-bhambola-gold/50 transition-all hover:scale-105 active:scale-95 cursor-default">
                                 <span className="block font-black text-white mb-3 text-2xl md:text-3xl uppercase tracking-tighter decoration-bhambola-gold underline-offset-8 underline decoration-8">Law Compliant</span>
-                                <span className="text-xl text-gray-300 font-bold italic leading-relaxed">Fully aligned with the 2025 Gaming Act. 100% legal business.</span>
+                                <span className="text-xl text-gray-300 font-bold italic leading-relaxed">Fully aligned with the Online Gaming Act 2025. 100% legal business.</span>
                             </li>
-                            <li className="p-8 rounded-[3rem] bg-gradient-to-br from-white/10 to-transparent border-2 border-white/10 shadow-2xl hover:border-bhambola-gold/50 transition-all hover:scale-105 active:scale-95 cursor-default">
-                                <span className="block font-black text-white mb-3 text-2xl md:text-3xl uppercase tracking-tighter decoration-bhambola-gold underline-offset-8 underline decoration-8">State Verified</span>
-                                <span className="text-xl text-gray-300 font-bold italic leading-relaxed">Following every state rule in the book. Integrity is key.</span>
+                            <li
+                                onClick={() => setIsModalOpen(true)}
+                                className="p-8 rounded-[3rem] bg-gradient-to-br from-white/10 to-transparent border-2 border-white/10 shadow-2xl hover:border-bhambola-gold/50 transition-all hover:scale-105 active:scale-95 cursor-pointer group/modal"
+                            >
+                                <span className="block font-black text-white mb-3 text-2xl md:text-3xl uppercase tracking-tighter decoration-bhambola-gold underline-offset-8 underline decoration-8 group-hover/modal:text-bhambola-gold transition-colors">Detailed Policy</span>
+                                <span className="text-xl text-gray-300 font-bold italic leading-relaxed">
+                                    For detailed Legal policy, <span className="text-bhambola-gold underline cursor-pointer">refer here</span> or <span className="text-bhambola-gold underline cursor-pointer">click here</span>.
+                                </span>
                             </li>
                         </ul>
                     </section>
                 </div>
+
+                <LegalModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    title="Professional Legal Policy"
+                    content={professionalLegalContent}
+                />
 
                 {/* Entry Model Section */}
                 <section className="relative bg-white/5 p-12 rounded-[5rem] border-4 border-bhambola-gold/20 shadow-[0_0_50px_rgba(255,215,0,0.1)] overflow-hidden">

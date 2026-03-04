@@ -49,7 +49,7 @@ export const translations = {
             },
             age: {
                 title: "Age Eligibility",
-                desc: "Open to everyone from 18 to 99 years. Inclusive for all genders."
+                desc: "18+ Years"
             },
             read_full: "Read Full Handout",
             events_title_prefix: "Upcoming",
@@ -251,7 +251,7 @@ export const translations = {
             },
             age: {
                 title: "आयु पात्रता",
-                desc: "18 से 99 वर्ष के सभी के लिए खुला। सभी लिंगों के लिए समावेशी।"
+                desc: "18+ वर्ष"
             },
             read_full: "पूरा हैंडआउट पढ़ें",
             events_title_prefix: "आगामी",
@@ -453,7 +453,7 @@ export const translations = {
             },
             age: {
                 title: "వయస్సు అర్హత",
-                desc: "18 నుండి 99 సంవత్సరాల వరకు అందరికీ తెరిచి ఉంది. అన్ని లింగాలకు కలుపుకొని."
+                desc: "18+ సంవత్సరాలు"
             },
             read_full: "పూర్తి కరపత్రాన్ని చదవండి",
             events_title_prefix: "రాబోయే",

@@ -69,6 +69,14 @@ const RatingsSection = () => {
         setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
     };
 
+    useEffect(() => {
+        const timer = setInterval(() => {
+            nextSlide();
+        }, 5000); // 5 seconds timer
+
+        return () => clearInterval(timer);
+    }, [testimonials.length]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);

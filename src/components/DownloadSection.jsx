@@ -20,7 +20,7 @@ const DownloadSection = () => {
 
             <div className="container mx-auto px-4 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16">
                 <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
-                    <h2 className="text-6xl md:text-8xl font-black text-white font-['Luckiest_Guy'] tracking-tight italic uppercase leading-[0.85]">
+                    <h2 className="text-4xl md:text-6xl font-black text-white font-['Cinzel'] tracking-[0.2em] uppercase leading-tight">
                         {t.title_part1} <br />
                         <span className="text-bhambola-red drop-shadow-[0_0_20px_rgba(214,0,0,0.6)]">{t.title_part2}</span>
                     </h2>

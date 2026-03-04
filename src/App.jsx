@@ -22,6 +22,7 @@ import TermsPage from './pages/TermsPage';
 import GameRulesPage from './pages/GameRulesPage';
 import LegalPolicyPage from './pages/LegalPolicyPage';
 import AboutUsPage from './pages/AboutUsPage';
+import ScrollToTop from './components/ScrollToTop';
 
 function SocialLoginHandler() {
   const navigate = useNavigate();
@@ -62,6 +63,7 @@ function App() {
     <AuthProvider>
       <LanguageProvider>
         <Router>
+          <ScrollToTop />
           <SocialLoginHandler />
           <Routes>
             <Route path="/" element={<LandingPage />} />

@@ -77,31 +77,19 @@ const Wallet = () => {
                     </div>
 
                     {!user ? (
-                        /* LOGGED OUT: Advertising Page Style */
-                        <div className="relative group">
+                        /* LOGGED OUT: Simplified CTA */
+                        <div className="relative group max-w-2xl mx-auto">
                             <div className="absolute -inset-1 bg-gradient-to-r from-bhambola-red via-bhambola-gold to-red-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                             <div className="relative bg-[#800000]/80 backdrop-blur-3xl border border-white/10 rounded-3xl p-12 text-center space-y-8">
-                                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-70 transition-all duration-700">
-                                    <div className="p-4 border border-white/10 rounded-2xl bg-white/5 font-black text-white italic">FAST</div>
-                                    <div className="p-4 border border-white/10 rounded-2xl bg-white/5 font-black text-white italic">SECURE</div>
-                                    <div className="p-4 border border-white/10 rounded-2xl bg-white/5 font-black text-white italic">GENZ</div>
-                                    <div className="p-4 border border-white/10 rounded-2xl bg-white/5 font-black text-white italic">LIT</div>
-                                </div>
-
-                                <div className="space-y-4">
-                                    <h3 className="text-3xl font-bold text-white uppercase tracking-widest">{pt.cta_login}</h3>
-                                    <div className="flex justify-center gap-4">
-                                        <Link to="/login">
-                                            <Button className="px-12 py-4 text-xl">LOGIN</Button>
-                                        </Link>
-                                    </div>
-                                </div>
-
-                                <div className="pt-12 flex flex-wrap justify-center gap-12 items-center grayscale opacity-50">
-                                    <span className="text-2xl font-black text-white opacity-20">VISA</span>
-                                    <span className="text-2xl font-black text-white opacity-20">MASTERCARD</span>
-                                    <span className="text-2xl font-black text-white opacity-20">UPI</span>
-                                    <span className="text-2xl font-black text-white opacity-20">NETBANKING</span>
+                                <div className="space-y-6">
+                                    <Link to="/login">
+                                        <button className="px-16 py-5 bg-bhambola-gold hover:bg-white text-black font-black text-2xl rounded-2xl transition-all hover:scale-105 shadow-2xl shadow-bhambola-gold/20 font-['Luckiest_Guy'] tracking-widest italic">
+                                            LOGIN NOW !
+                                        </button>
+                                    </Link>
+                                    <p className="text-white/60 font-black uppercase tracking-[0.3em] text-sm font-['Cinzel']">
+                                        to know more details
+                                    </p>
                                 </div>
                             </div>
                         </div>
