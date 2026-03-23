@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
         const userData = {
             name: "John Doe",
             email: email,
+            role: email === 'admin@bhambola.com' ? 'admin' : 'user',
             balance: 5000,
             purchasedChips: 2500,
             dailyUsage: 350,
@@ -81,9 +82,11 @@ export const AuthProvider = ({ children }) => {
     };
 
     const completeSocialLogin = (provider) => {
+        const email = `${provider.toLowerCase()}@example.com`;
         const userData = {
             name: `${provider} User`,
-            email: `${provider.toLowerCase()}@example.com`,
+            email: email,
+            role: email === 'admin@bhambola.com' ? 'admin' : 'user',
             balance: 5000,
             purchasedChips: 0,
             dailyUsage: 0,

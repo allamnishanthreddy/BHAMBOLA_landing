@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white font-['Cormorant_Garamond'] overflow-x-hidden;
+    @apply bg-gradient-to-br from-red-900 via-red-800 to-red-950 text-white font-['Cormorant_Garamond'] overflow-x-hidden w-screen max-w-full;
   }
 }
 

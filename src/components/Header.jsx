@@ -10,6 +10,7 @@ import TransparentLogo from './ui/TransparentLogo';
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [showProfileMenu, setShowProfileMenu] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { language, toggleLanguage, setLanguage } = useLanguage();
     const t = translations[language];
     const { user, logout } = useAuth();
@@ -55,7 +56,6 @@ const Header = () => {
                     {Object.keys(t.nav).filter(key => key !== 'login' && key !== 'signup' && key !== 'profile').map((key) => {
                         const isHomePage = window.location.pathname === '/';
 
-                        // Special handling for the "WE ARE LEGAL!" button
                         if (key === 'legal') {
                             return (
                                 <Link
@@ -90,7 +90,7 @@ const Header = () => {
 
                 {/* Account Section */}
                 <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-3">
+                    <div className="hidden md:flex items-center gap-3">
                         <Link
                             to="/faqs"
                             className="w-10 h-10 flex items-center justify-center bg-bhambola-gold hover:bg-white text-black font-black rounded-full transition-all shadow-lg hover:scale-110"
@@ -121,7 +121,7 @@ const Header = () => {
 
                     {user ? (
                         <div className="relative profile-dropdown-container flex items-center gap-3">
-                            <span className="text-white font-bold hidden sm:inline text-sm tracking-wide">
+                            <span className="text-white font-bold hidden xl:inline text-sm tracking-wide">
                                 {user.name}
                             </span>
                             <button
@@ -164,19 +164,78 @@ const Header = () => {
                         </div>
                     ) : (
                         <div className="flex items-center gap-3 flex-nowrap shrink-0">
-                            <Link to="/signup">
-                                <button className="px-6 py-2 text-sm font-bold text-white hover:text-bhambola-gold transition-colors border-2 border-transparent hover:border-bhambola-gold/30 rounded-lg whitespace-nowrap">
+                            <Link to="/signup" className="hidden sm:block">
+                                <button className="px-4 py-2 text-sm font-bold text-white hover:text-bhambola-gold transition-colors border-2 border-transparent hover:border-bhambola-gold/30 rounded-lg whitespace-nowrap font-['Cinzel']">
                                     {t.nav.signup}
                                 </button>
                             </Link>
                             <Link to="/login">
-                                <button className="px-6 py-2 text-sm font-bold text-white hover:text-bhambola-gold transition-colors border-2 border-transparent hover:border-bhambola-gold/30 rounded-lg whitespace-nowrap">
+                                <button className="px-6 py-2 text-sm font-bold text-white bg-bhambola-red hover:bg-red-700 transition-all rounded-lg whitespace-nowrap font-['Cinzel'] shadow-lg hover:shadow-red-600/30">
                                     {t.nav.login}
                                 </button>
                             </Link>
                         </div>
                     )}
+
+                    {/* Mobile Menu Button - Visible below xl */}
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="xl:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none z-50 relative"
+                    >
+                        <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                        <span className={`w-6 h-0.5 bg-white transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+                        <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                    </button>
                 </div>
+            </div>
+
+            {/* Mobile Menu Overlay */}
+            <div className={`fixed inset-0 bg-red-950/98 backdrop-blur-2xl transition-all duration-500 xl:hidden z-40 flex flex-col items-center justify-center gap-8 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none invisible'}`}>
+                <nav className="flex flex-col items-center gap-8">
+                    {Object.keys(t.nav).filter(key => key !== 'login' && key !== 'signup' && key !== 'profile').map((key) => {
+                        const isHomePage = window.location.pathname === '/';
+
+                        if (key === 'legal') {
+                            return (
+                                <Link
+                                    key={key}
+                                    to="/legal-policy"
+                                    className="px-8 py-3 bg-gradient-to-r from-bhambola-gold to-yellow-600 text-black font-black rounded-xl text-sm tracking-[0.2em] uppercase hover:scale-105 transition-all shadow-xl font-['Cinzel']"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {t.nav[key]}
+                                </Link>
+                            );
+                        }
+
+                        return (
+                            <a
+                                key={key}
+                                href={isHomePage ? `#${key}` : `/#${key}`}
+                                className="text-white hover:text-bhambola-gold transition-all duration-300 text-2xl font-black tracking-[0.3em] uppercase py-2 font-['Cinzel']"
+                                onClick={(e) => {
+                                    setIsMenuOpen(false);
+                                    if (isHomePage) {
+                                        e.preventDefault();
+                                        const element = document.getElementById(key);
+                                        element?.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }}
+                            >
+                                {t.nav[key]}
+                            </a>
+                        );
+                    })}
+
+                    {/* Add Signup button in mobile menu if not logged in */}
+                    {!user && (
+                        <Link to="/signup" onClick={() => setIsMenuOpen(false)}>
+                            <button className="text-white/60 hover:text-white text-lg font-bold font-['Cinzel'] tracking-widest uppercase">
+                                {t.nav.signup}
+                            </button>
+                        </Link>
+                    )}
+                </nav>
             </div>
         </header>
     );

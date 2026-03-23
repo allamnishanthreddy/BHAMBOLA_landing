@@ -10,12 +10,12 @@ const Footer = () => {
     const t = translations[language].footer;
 
     return (
-        <footer className="bg-[#800000] py-16 border-t border-white/10">
+        <footer className="bg-[#800000] py-16 border-t border-white/10 overflow-hidden w-full relative">
             <div className="container mx-auto px-4">
                 <div className="grid md:grid-cols-4 gap-12">
                     {/* Brand */}
-                    <div className="col-span-1 md:col-span-2 space-y-4">
-                        <div className="flex justify-start -ml-8">
+                    <div className="col-span-1 md:col-span-2 space-y-4 text-center md:text-left">
+                        <div className="flex justify-center md:justify-start -ml-4 md:-ml-8">
                             <TransparentLogo
                                 src={logo}
                                 className="h-24 md:h-32 w-auto"
@@ -27,14 +27,14 @@ const Footer = () => {
                         <p className="text-gray-500 text-sm">
                             {t.tagline}
                         </p>
-                        <div className="flex gap-4 pt-4">
-                            <button className="p-2 glass rounded-lg hover:bg-white/10">{t.download_android}</button>
-                            <button className="p-2 glass rounded-lg hover:bg-white/10">{t.download_ios}</button>
+                        <div className="flex justify-center md:justify-start gap-4 pt-4">
+                            <button className="px-4 py-2 border border-white/10 rounded-lg hover:bg-white/10 text-xs font-bold font-['Cinzel'] tracking-widest">{t.download_android}</button>
+                            <button className="px-4 py-2 border border-white/10 rounded-lg hover:bg-white/10 text-xs font-bold font-['Cinzel'] tracking-widest">{t.download_ios}</button>
                         </div>
                     </div>
 
                     {/* Quick Links */}
-                    <div className="space-y-4">
+                    <div className="space-y-4 text-center md:text-left">
                         <h4 className="text-lg font-black text-bhambola-gold font-['Cinzel'] tracking-widest uppercase italic">{t.legal_title}</h4>
                         <ul className="space-y-2 text-gray-400 text-sm font-['Cinzel'] font-bold">
                             <li><Link to="/privacy" className="hover:text-white uppercase tracking-wider">{t.privacy}</Link></li>
@@ -45,12 +45,12 @@ const Footer = () => {
                         </ul>
                     </div>
                     {/* Support */}
-                    <div className="space-y-4">
+                    <div className="space-y-4 text-center md:text-left">
                         <h4 className="text-lg font-black text-bhambola-gold font-['Cinzel'] tracking-widest uppercase italic">{t.support_title}</h4>
                         <ul className="space-y-2 text-gray-400 font-medium font-['Playfair_Display'] italic">
                             <li>{t.help}</li>
                             <li>{t.contact}</li>
-                            <li className="flex items-center gap-2 text-green-400 font-bold">
+                            <li className="flex items-center justify-center md:justify-start gap-2 text-green-400 font-bold whitespace-nowrap">
                                 <span>{t.whatsapp}</span>
                             </li>
                         </ul>

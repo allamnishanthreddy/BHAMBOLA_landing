@@ -17,15 +17,15 @@ const Community = () => {
                             {t.rules_title_prefix} <span className="text-bhambola-red">{t.rules_title_highlight}</span>
                         </h2>
                         <div className="space-y-6">
-                            <div className="bg-white p-6 rounded-xl border-l-4 border-bhambola-red shadow-lg hover:shadow-xl transition-all">
+                            <div className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border-l-4 border-bhambola-red shadow-lg hover:shadow-xl transition-all">
                                 <h4 className="font-bold text-xl mb-2 text-gray-900 font-['Cinzel'] tracking-tight">{t.committee.title}</h4>
                                 <p className="text-gray-600 font-medium leading-relaxed">{t.committee.desc}</p>
                             </div>
-                            <div className="bg-white p-6 rounded-xl border-l-4 border-bhambola-gold shadow-lg hover:shadow-xl transition-all">
+                            <div className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border-l-4 border-bhambola-gold shadow-lg hover:shadow-xl transition-all">
                                 <h4 className="font-bold text-xl mb-2 text-gray-900 font-['Cinzel'] tracking-tight">{t.kyc.title}</h4>
                                 <p className="text-gray-600 font-medium leading-relaxed">{t.kyc.desc}</p>
                             </div>
-                            <div className="bg-white p-6 rounded-xl border-l-4 border-gray-800 shadow-lg hover:shadow-xl transition-all">
+                            <div className="bg-white/90 backdrop-blur-sm p-6 rounded-xl border-l-4 border-gray-800 shadow-lg hover:shadow-xl transition-all">
                                 <h4 className="font-bold text-xl mb-2 text-gray-900 font-['Cinzel'] tracking-tight">{t.age.title}</h4>
                                 <p className="text-gray-600 font-medium leading-relaxed">{t.age.desc}</p>
                             </div>

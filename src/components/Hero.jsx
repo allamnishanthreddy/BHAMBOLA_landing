@@ -68,7 +68,7 @@ const Hero = () => {
             {/* Background Texture - Restored to cube pattern */}
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 pointer-events-none"></div>
 
-            <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10 pt-10 md:pt-0">
 
                 {/* Content */}
                 <div className="space-y-6 animate-fade-in-up">
@@ -107,12 +107,12 @@ const Hero = () => {
                 </div>
 
                 {/* Visuals - Dash + Chips */}
-                <div className="relative h-[600px] hidden md:block perspective-1000">
+                <div className="relative h-[480px] md:h-[600px] mt-12 md:mt-0 md:perspective-1000 flex items-center justify-center overflow-hidden">
 
 
 
                     {/* Dashboard Card - Gen Z Black style softened */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[400px] bg-black/70 rounded-[3rem] p-7 backdrop-blur-3xl border-4 border-bhambola-gold shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)] transform rotate-3 hover:rotate-0 transition-all duration-700 flex flex-col justify-between overflow-hidden group">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[310px] sm:w-[340px] h-[360px] sm:h-[400px] bg-black/70 rounded-[2.5rem] sm:rounded-[3rem] p-5 sm:p-7 backdrop-blur-3xl border-4 border-bhambola-gold shadow-[0_32px_64px_-16px_rgba(0,0,0,0.6)] transform rotate-3 hover:rotate-0 transition-all duration-700 flex flex-col justify-between overflow-hidden group">
                         <div className="absolute inset-0 bg-gradient-to-tr from-bhambola-red/10 via-transparent to-transparent z-0 opacity-40"></div>
 
                         {/* Card Header */}

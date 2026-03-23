@@ -23,6 +23,7 @@ import GameRulesPage from './pages/GameRulesPage';
 import LegalPolicyPage from './pages/LegalPolicyPage';
 import AboutUsPage from './pages/AboutUsPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import AdminDashboard from './pages/AdminDashboard';
 import ScrollToTop from './components/ScrollToTop';
 
 function SocialLoginHandler() {
@@ -42,7 +43,7 @@ function SocialLoginHandler() {
 
 function LandingPage() {
   return (
-    <div className="min-h-screen font-sans selection:bg-bhambola-red selection:text-white overflow-x-hidden">
+    <div className="min-h-screen font-sans selection:bg-bhambola-red selection:text-white overflow-hidden">
       <Header />
       <main>
         <Hero />
@@ -79,6 +80,7 @@ function App() {
             <Route path="/legal-policy" element={<LegalPolicyPage />} />
             <Route path="/about" element={<AboutUsPage />} />
             <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/admin" element={<AdminDashboard />} />
           </Routes>
         </Router>
       </LanguageProvider>

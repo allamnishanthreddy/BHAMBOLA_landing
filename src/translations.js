@@ -12,6 +12,7 @@ export const translations = {
             profile: {
                 summary: "Account Summary",
                 change_password: "Change Password",
+                admin: "Admin Portal",
                 logout: "Logout"
             }
         },
@@ -214,6 +215,7 @@ export const translations = {
             profile: {
                 summary: "खाता सारांश",
                 change_password: "पासवर्ड बदलें",
+                admin: "एडमिन पोर्टल",
                 logout: "लॉगआउट"
             }
         },
@@ -416,6 +418,7 @@ export const translations = {
             profile: {
                 summary: "ఖాతా సారాంశం",
                 change_password: "పాస్‌వర్డ్ మార్చండి",
+                admin: "అడ్మిన్ పోర్టల్",
                 logout: "లాగ్ అవుట్"
             }
         },

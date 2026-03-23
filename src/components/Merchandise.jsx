@@ -9,8 +9,8 @@ const ProductCard = ({ name, price, description, color, delay }) => (
         className="group relative bg-white/5 backdrop-blur-2xl border-2 border-bhambola-gold rounded-[2.5rem] p-8 md:p-10 flex flex-col items-center hover:border-white/40 transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_20px_80px_-20px_rgba(255,215,0,0.3)] overflow-hidden"
         style={{ transitionDelay: `${delay}ms` }}
     >
-        {/* Animated Background Glow */}
-        <div className={`absolute -top-24 -right-24 w-48 h-48 rounded-full blur-[80px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 bg-${color}-500`}></div>
+        {/* Animated Background Glow - Hidden on mobile */}
+        <div className={`hidden md:block absolute -top-24 -right-24 w-48 h-48 rounded-full blur-[80px] opacity-0 group-hover:opacity-20 transition-opacity duration-700 bg-${color}-500`}></div>
 
         {/* Product Visual Container */}
         <div className="relative w-full aspect-square mb-10 flex items-center justify-center rounded-3xl bg-gradient-to-br from-white/5 to-transparent border border-white/5 group-hover:border-white/10 transition-colors overflow-hidden">
@@ -83,8 +83,8 @@ const Merchandise = () => {
 
     return (
         <section id="merchandise" className="py-32 relative overflow-hidden bg-[#1A0000]">
-            {/* Massive Background Accents */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bhambola-red/5 rounded-full blur-[150px]"></div>
+            {/* Massive Background Accents - Hidden on mobile */}
+            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bhambola-red/5 rounded-full blur-[150px]"></div>
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-24 space-y-6">

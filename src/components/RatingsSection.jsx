@@ -97,9 +97,9 @@ const RatingsSection = () => {
 
     return (
         <section className="py-24 relative bg-[#4D0000] overflow-hidden">
-            {/* Dynamic background glow */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-bhambola-red/20 rounded-full blur-[120px] -mr-64 -mt-64 animate-pulse"></div>
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-bhambola-gold/10 rounded-full blur-[120px] -ml-64 -mb-64"></div>
+            {/* Dynamic background glow - Restricted on mobile */}
+            <div className="hidden md:block absolute top-0 right-0 w-[500px] h-[500px] bg-bhambola-red/20 rounded-full blur-[120px] -mr-64 -mt-64 animate-pulse"></div>
+            <div className="hidden md:block absolute bottom-0 left-0 w-[500px] h-[500px] bg-bhambola-gold/10 rounded-full blur-[120px] -ml-64 -mb-64"></div>
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-20 space-y-4">
@@ -117,7 +117,7 @@ const RatingsSection = () => {
                     <div className="overflow-hidden rounded-[2.5rem]">
                         <div
                             className="flex transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]"
-                            style={{ transform: `translateX(-${currentIndex * (100 / (window.innerWidth >= 768 ? 2 : 1))}%)` }}
+                            style={{ transform: `translateX(-${currentIndex * (100 / (typeof window !== 'undefined' && window.innerWidth >= 768 ? 2 : 1))}%)` }}
                         >
                             {testimonials.map((rating) => (
                                 <div key={rating.id} className="w-full md:w-1/2 flex-shrink-0 px-4">
@@ -130,15 +130,15 @@ const RatingsSection = () => {
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 md:-translate-x-12 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-bhambola-red hover:border-bhambola-red transition-all duration-300 backdrop-blur-md z-20 group/btn"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 md:-translate-x-12 w-10 h-10 md:w-16 md:h-16 rounded-full bg-black/40 border border-white/20 flex items-center justify-center text-white hover:bg-bhambola-red hover:border-bhambola-red transition-all duration-300 backdrop-blur-md z-20 group/btn"
                     >
-                        <span className="text-2xl group-hover/btn:-translate-x-1 transition-transform">←</span>
+                        <span className="text-xl group-hover/btn:-translate-x-1 transition-transform">←</span>
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 md:translate-x-12 w-12 h-12 md:w-16 md:h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-bhambola-red hover:border-bhambola-red transition-all duration-300 backdrop-blur-md z-20 group/btn"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 md:translate-x-12 w-10 h-10 md:w-16 md:h-16 rounded-full bg-black/40 border border-white/20 flex items-center justify-center text-white hover:bg-bhambola-red hover:border-bhambola-red transition-all duration-300 backdrop-blur-md z-20 group/btn"
                     >
-                        <span className="text-2xl group-hover/btn:translate-x-1 transition-transform">→</span>
+                        <span className="text-xl group-hover/btn:translate-x-1 transition-transform">→</span>
                     </button>
 
                     {/* Indicators */}

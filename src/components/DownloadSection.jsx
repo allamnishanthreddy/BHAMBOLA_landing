@@ -47,7 +47,7 @@ const DownloadSection = () => {
                 </div>
 
                 {/* Staggered Phone Mockups */}
-                <div className="lg:w-1/2 relative flex justify-center items-center h-[600px] w-full">
+                <div className="lg:w-1/2 relative flex justify-center items-center h-[500px] sm:h-[600px] w-full scale-75 sm:scale-100">
                     {/* Left Phone (Legacy "B" Logo) */}
                     <div className="absolute left-4 lg:left-10 z-10 transform -rotate-12 -translate-x-8 translate-y-12 sm:-translate-x-12 opacity-80 scale-90 sm:scale-100">
                         <div className="relative w-56 h-[460px] border-[6px] border-gray-800 bg-black rounded-[2.5rem] shadow-3xl overflow-hidden">
@@ -62,7 +62,7 @@ const DownloadSection = () => {
                     </div>
 
                     {/* Right Phone (Primary - Real Logo) */}
-                    <div className="relative z-20 transform rotate-3 translate-x-8 -translate-y-4 sm:translate-x-16 hover:rotate-0 transition-transform duration-700 active:scale-95 group">
+                    <div className="relative z-20 transform rotate-3 translate-x-4 sm:translate-x-16 -translate-y-4 hover:rotate-0 transition-transform duration-700 active:scale-95 group">
                         <div className="absolute -inset-2 bg-gradient-to-r from-bhambola-red to-bhambola-gold rounded-[3rem] blur-lg opacity-20 group-hover:opacity-40 transition duration-1000"></div>
                         <div className="relative w-64 h-[520px] border-[8px] border-gray-900 bg-black rounded-[3rem] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden">
                             {/* Screen Header */}
